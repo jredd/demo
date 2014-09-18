@@ -1,0 +1,22 @@
+$blue: #7d8dae;
+$white: #FFF8F8;
+
+body {
+  background-color: $blue;
+  color: white;
+}
+
+.container {
+//  background-color: red;
+}
+
+#div1, #div2 {
+  width:221px;
+  height:203px;
+//  padding:10px;
+  border:1px solid #aaaaaa;
+  img {
+    padding: 0;
+    margin: 0;
+  }
+}

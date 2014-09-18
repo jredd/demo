@@ -1,0 +1,11 @@
+body {
+  background-color: #7d8dae;
+  color: white; }
+
+#div1, #div2 {
+  width: 221px;
+  height: 203px;
+  border: 1px solid #aaaaaa; }
+  #div1 img, #div2 img {
+    padding: 0;
+    margin: 0; }
