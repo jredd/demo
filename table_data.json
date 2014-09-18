@@ -1,0 +1,51 @@
+[
+    {
+        "first_name": "Sarah",
+        "last_name": "Allaman",
+        "color": "Green",
+        "car": "Hummer H2",
+        "food": "Cookies"
+    },
+    {
+        "first_name": "Mike",
+        "last_name": "Berg",
+        "color": "Purple",
+        "car": "Dodge Challenger",
+        "food": "Apples"
+    },
+    {
+        "first_name": "Sussan",
+        "last_name": "Johnson",
+        "color": "Blue",
+        "car": "Subaru Forester",
+        "food": "Pizza"
+    },
+    {
+        "first_name": "Marco",
+        "last_name": "Polo",
+        "color": "Green",
+        "car": "Ford Fiesta",
+        "food": "Fried Chicken"
+    },
+    {
+        "first_name": "Francis",
+        "last_name": "Morgan",
+        "color": "Blue",
+        "car": "Scion Tc",
+        "food": "Cake"
+    },
+    {
+        "first_name": "George",
+        "last_name": "Shutts",
+        "color": "Red",
+        "car": "Ford F150",
+        "food": "Ice Cream"
+    },
+    {
+        "first_name": "Samantha",
+        "last_name": "Smith",
+        "color": "Yellow",
+        "car": "Subaru WRX",
+        "food": "Pear"
+    }
+]

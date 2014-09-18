@@ -13,6 +13,19 @@
     <link rel="stylesheet" type="text/css" href="css/main.css"/>
 </head>
 <body>
+<header>
+    <h1 class="bot_readable">Jason Redd - Creative Problem Solver</h1>
+</header>
+<nav>
+    <ul class="demo_nav">
+        <li><a href="" class="nav_active">Demo 1</a></li>
+        <li><a href="">Demo 2</a></li>
+        <li><a href="">Demo 3</a></li>
+        <li><a href="">Demo 4</a></li>
+        <li><a href="">Demo 5</a></li>
+
+    </ul>
+</nav>
 <div id="wrapper">
     <div class="container">
         <div class="row">
@@ -20,32 +33,24 @@
 
             </div>
         </div>
-        <header>
-            header
-        </header>
-        <nav>
-            nav content
-        </nav>
+
+
         <div class="content">
             <video>
 
 
             </video>
-            <svg width="500" height="500">
-                <circle cx="250"
-                        cy="250"
-                        r="100"
-                        fill="red"
-                        stroke="black"
-                        stroke-width="2"/>
-            </svg>
+            <div class="row">
+                <div class="col-lg-8">
+                    <div id="pie_chart"></div>
+                </div>
+                <div class="col-lg-4">
+                    <ul id="color_list">
 
-            <ul>
-                <li>Hi</li>
-                <li>how</li>
-                <li>are</li>
-                <li>you?</li>
-            </ul>
+                    </ul>
+                </div>
+            </div>
+
             <ol>
                 <li>go</li>
                 <li>away</li>
@@ -59,17 +64,43 @@
                 <dt>Milk</dt>
                     <dd>White cold drink</dd>
             </dl>
-            <form>
-                <input type="email">
-                <input type="tel">
-                <input type="date">
-                <input type="tel">
-                <input type="number">
-                <input type="checkbox">
-                <input type="radio">
-                <button type="reset"></button>
 
-            </form>
+            <div class="row">
+                <div class="col-lg-12">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <td>Name</td>
+                                <td>Color</td>
+                                <td>Food</td>
+                                <td>Car</td>
+                            </tr>
+                        </thead>
+                        <tbody id="table_body">
+
+
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <form>
+                        <input type="email">
+                        <input type="tel">
+                        <input type="date">
+                        <input type="tel">
+                        <input type="number">
+                        <input type="checkbox">
+                        <input type="radio">
+                        <button type="reset"></button>
+
+                    </form>
+                </div>
+            </div>
+
             <div class="row">
                 <div class="col-lg-12">
                     <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
@@ -92,6 +123,8 @@
                 </div>
             </div>
         </footer>
+        <script type="text/javascript" src="js/libs/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript" src="js/libs/d3.js"></script>
         <script type="text/javascript" src="js/main.js"></script>
 
     </div>
