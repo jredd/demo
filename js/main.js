@@ -65,18 +65,18 @@ function build_pie_chart() {
         $('#color_list').append(html_string)
     });
 
-    var margin = {top: 20, right: 20, bottom: 30, left: 40};
-    var width = 550 - margin.left - margin.right;
-    var height = 550 - margin.top - margin.bottom;
+    var margin = {top: 20, right: 20, bottom: 20, left: 20};
+    var width = 850 - margin.left - margin.right;
+    var height = 850 - margin.top - margin.bottom;
 
-    var radius = Math.min(width, height) / 2;
-    var innerRadius = radius -100;
+    var radius = (Math.min(width, height) / 2)-100;
+    var innerRadius = radius - 90;
 
     var color = d3.scale.ordinal()
         .range(["blue", "green", "red", "yellow", "purple", "orange"]);
 
     var arc = d3.svg.arc()
-        .outerRadius(radius - 10)
+        .outerRadius(radius)
         .innerRadius(innerRadius);
 
     var pie = d3.layout.pie()
@@ -90,7 +90,7 @@ function build_pie_chart() {
         .attr("height", height)
         .attr('class', 'pie_chart_svg')
         .append("g")
-        .attr("transform", "translate(" + width / 2 +  "," + height / 2 + ")");
+        .attr("transform", "translate(" + width/2 +  "," + ((height/2.25)) + ")");
 
     var g = svg.selectAll(".arc")
         .data(pie(data))
@@ -100,16 +100,19 @@ function build_pie_chart() {
             return 'arc '+d.data.color.toLowerCase()+'_arc'
         });
 
+    var current_fill = '';
+
     var arc_path = g.append("path")
         .attr("d", arc)
-//        .attr('class', function)
         .style("fill", function (d) {
             return d3.hsl(color(d.data.color)).darker(0.5);
-//            return color(d.data.color);
         })
         .transition()
         .duration(800)
         .attrTween("d", tweenPie);
+
+
+
     var textOffset = innerRadius/6;
 
     function getPercent(d){
@@ -132,12 +135,11 @@ function build_pie_chart() {
                 return "end";
             }
         })
-//        .text(function(d){ return d.name; })
-//        .text(getPercent)
         .attr("class", "units")
         .style('fill', 'white')
         .attr('opacity', 0)
         .attr("transform", function(d) {
+            var b = (d.startAngle + d.endAngle - Math.PI)/2;
             return "translate(" + Math.cos(((d.startAngle+d.endAngle - Math.PI)/2)) * (innerRadius+textOffset) + "," + Math.sin((d.startAngle+d.endAngle - Math.PI)/2) * (innerRadius+textOffset) + ")";
         })
         .attr("dy", function(d){
@@ -155,7 +157,6 @@ function build_pie_chart() {
             }
         })
         .text(getPercent)
-//        .text(function(d){return d.data.color; })
         .transition().duration(800).attr('opacity', 1).attrTween("transform", textTween);
 
 
@@ -164,6 +165,7 @@ function build_pie_chart() {
         return function(t) {
             return arc(i(t)); };
     }
+
     var oldPieData = [];
 
     function textTween(d, i) {
@@ -185,37 +187,65 @@ function build_pie_chart() {
             return "translate(" + Math.cos(val) * (innerRadius+textOffset) + "," + Math.sin(val) * (innerRadius+textOffset) + ")";
         };
     }
-    function get_parent_width(){
-        console.log($('.pie_chart_svg').parent().width()-width)
-        return 'translate(' + ($('.pie_chart_svg').parent().width()-width) + ',0)';
-    }
 
-    var arcHover = d3.svg.arc()
-        .innerRadius(60)
-        .outerRadius(100)
-        .startAngle(45 * (Math.PI/180))
-        .endAngle(3);
+    var color_list = $('#color_list');
 
-    arc_path.on('mouseover', function(e) {
-        arc_path.attr("d", arcHover);
+    color_list.children().mouseenter(function() {
+        var arc_class = '.' + this.innerHTML.split(':')[0].toLowerCase() + '_arc'
+        d3.select(arc_class).transition().duration(300)
+            .attr("transform", function (d) {
+                var centroid = arc.centroid(d)
+                var arc_x = centroid[0] * .2;
+                var arc_y = centroid[1] * .2;
+                return 'translate(' + arc_x + ',' + arc_y + ')'
+            });
     });
 
-    $('#color_list').children().mouseenter(function(event) {
+    $('.arc').mouseenter(function() {
+        current_fill = d3.select(this).style.fill;
+        console.log(current_fill)
+//        console.log(d3.select(this));
+        d3.select(this).transition().duration(300)
+            .style('fill', d3.hsl(current_fill).brighter(.5))
+
+    });
+//
+////        var arc_class = '.' + this.innerHTML.split(':')[0].toLowerCase() + '_arc'
+//            .on('mouseover', function(d) {
+//                current_fill = this.style.fill;
+//                console.log(d3.select(this));
+//                d3.select(this).transition().duration(300)
+//                    .on('mouseover', function(d) {
+//                        d3.select(this).transition().duration(300)
+//                        .attr('opacity', 1)
+//                            .style('fill', d3.hsl(current_fill).brighter(.5))
+//                            .style('color', 'black')
+//                    }
+//
+//
+//            })
+//            .on('mouseout', function() {
+//                d3.select(this).transition().duration(300)
+//                    .attr('opacity', 1)
+//                    .style('fill', current_fill)
+//                    .style('color', 'black')
+//            })
+//        d3.select(arc_class).transition().duration(300)
+//            .attr("transform", function (d) {
+//                var centroid = arc.centroid(d)
+//                var arc_x = centroid[0] * .2;
+//                var arc_y = centroid[1] * .2;
+//                return 'translate(' + arc_x + ',' + arc_y + ')'
+//            });
+//    });
+
+    color_list.children().mouseleave(function() {
         var arc_class = '.' + this.innerHTML.split(':')[0].toLowerCase() + '_arc'
         console.log(arc_class)
-
-        var arcHover = d3.svg.arc()
-            .innerRadius(60)
-            .outerRadius(100)
-            .startAngle(45 * (Math.PI/180))
-            .endAngle(3);
-
-        arcPath.on('mouseover', function(e) {
-            arcPath.attr("d", arcHover);
-        });
-
-
-    })
+        console.log()
+        d3.select(arc_class).transition().duration(300)
+            .attr("transform", 'translate(0,0)');
+    });
 
 }build_pie_chart();
 

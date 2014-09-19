@@ -1,5 +1,6 @@
 $blue: #7d8dae;
 $white: #FFF8F8;
+$darkgrey: #A9A9A9;
 
 body {
   background-color: $blue;
@@ -39,7 +40,7 @@ header {
     list-style: none;
     a{
       color: white;
-      background: darkgrey;
+      background: $darkgrey;
       display: block;
       padding: 15px;
     }
@@ -52,6 +53,7 @@ header {
 }
 
 #color_list {
+  margin-top: 200px;
   list-style: none;
   font-size: 2em;
   li {
@@ -59,7 +61,7 @@ header {
     padding: 5px;
   }
   :hover {
-    color:blue;
+    color:lightgray;
     cursor: pointer;
   }
 }

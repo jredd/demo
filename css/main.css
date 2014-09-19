@@ -23,7 +23,7 @@ header {
   list-style: none; }
   .demo_nav li a {
     color: white;
-    background: darkgrey;
+    background: darkgray;
     display: block;
     padding: 15px; }
   .demo_nav li a:hover, .demo_nav li .nav_active {
@@ -32,11 +32,12 @@ header {
     text-decoration: none; }
 
 #color_list {
+  margin-top: 200px;
   list-style: none;
   font-size: 2em; }
   #color_list li {
     display: block;
     padding: 5px; }
   #color_list :hover {
-    color: blue;
+    color: lightgray;
     cursor: pointer; }
