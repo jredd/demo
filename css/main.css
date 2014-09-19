@@ -9,3 +9,34 @@ body {
   #div1 img, #div2 img {
     padding: 0;
     margin: 0; }
+
+header {
+  background: url("../images/jason-redd-logo.png") no-repeat top center;
+  height: 100px; }
+
+.bot_readable {
+  text-indent: -9999px;
+  float: left; }
+
+.demo_nav li {
+  float: left;
+  list-style: none; }
+  .demo_nav li a {
+    color: white;
+    background: darkgrey;
+    display: block;
+    padding: 15px; }
+  .demo_nav li a:hover, .demo_nav li .nav_active {
+    background-color: lightgray;
+    color: #444444;
+    text-decoration: none; }
+
+#color_list {
+  list-style: none;
+  font-size: 2em; }
+  #color_list li {
+    display: block;
+    padding: 5px; }
+  #color_list :hover {
+    color: blue;
+    cursor: pointer; }

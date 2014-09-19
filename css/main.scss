@@ -20,3 +20,46 @@ body {
     margin: 0;
   }
 }
+
+header {
+  background: url("../images/jason-redd-logo.png") no-repeat top center;
+  height: 100px;
+}
+
+// Allow the head text to be readable for bots
+.bot_readable {
+  text-indent: -9999px;
+  float: left;
+}
+
+
+.demo_nav {
+  li {
+    float: left;
+    list-style: none;
+    a{
+      color: white;
+      background: darkgrey;
+      display: block;
+      padding: 15px;
+    }
+    a:hover, .nav_active {
+      background-color: lightgray;
+      color: #444444;
+      text-decoration: none;
+    }
+  }
+}
+
+#color_list {
+  list-style: none;
+  font-size: 2em;
+  li {
+    display:block;
+    padding: 5px;
+  }
+  :hover {
+    color:blue;
+    cursor: pointer;
+  }
+}
