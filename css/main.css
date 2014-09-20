@@ -1,6 +1,6 @@
 body {
   background-color: #7d8dae;
-  color: white; }
+  color: #fffefa; }
 
 #div1, #div2 {
   width: 221px;
@@ -22,22 +22,61 @@ header {
   float: left;
   list-style: none; }
   .demo_nav li a {
-    color: white;
-    background: darkgray;
+    color: #fffefa;
+    background-color: darkgray;
     display: block;
     padding: 15px; }
   .demo_nav li a:hover, .demo_nav li .nav_active {
     background-color: lightgray;
-    color: #444444;
+    color: #686869;
     text-decoration: none; }
 
-#color_list {
-  margin-top: 200px;
+.color_list h2 {
+  margin-top: 200px; }
+.color_list ul {
   list-style: none;
   font-size: 2em; }
-  #color_list li {
+  .color_list ul li {
     display: block;
     padding: 5px; }
-  #color_list :hover {
+  .color_list ul :hover {
     color: lightgray;
     cursor: pointer; }
+
+#user_info_table thead td:first-child {
+  border-radius: 10px 0 0 0;
+  -webkit-border-radius: 10px 0 0 0;
+  -moz-border-radius: 10px 0 0 0; }
+#user_info_table thead td:last-child {
+  border-radius: 0 10px 0 0;
+  -webkit-border-radius: 0 10px 0 0;
+  -moz-border-radius: 0 10px 0 0; }
+#user_info_table thead td:only-child {
+  border-radius: 10px 10px 0 0;
+  -webkit-border-radius: 10px 10px 0 0;
+  -moz-border-radius: 10px 10px 0 0; }
+#user_info_table thead tr {
+  background-color: #686869; }
+  #user_info_table thead tr td {
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: 600; }
+  #user_info_table thead tr td:hover {
+    background-color: darkgray; }
+#user_info_table tbody tr:nth-child(odd) {
+  background: #fffefa;
+  color: darkgray; }
+#user_info_table tbody tr:nth-child(even) {
+  background: darkgray;
+  color: #fffefa; }
+#user_info_table tbody tr:hover {
+  background: lightgray;
+  color: #686869; }
+#user_info_table tfoot {
+  background-color: #686869; }
+  #user_info_table tfoot tr {
+    height: 3px; }
+
+#join_email_list {
+  background-color: #fffefa;
+  color: #686869; }

@@ -1,14 +1,12 @@
 $blue: #7d8dae;
-$white: #FFF8F8;
-$darkgrey: #A9A9A9;
+$white: #FfFeFa;
+$midgrey: #A9A9A9;
+$lightgrey: #D3D3D3;
+$darkgrey: #686869;
 
 body {
   background-color: $blue;
-  color: white;
-}
-
-.container {
-//  background-color: red;
+  color: $white;
 }
 
 #div1, #div2 {
@@ -33,35 +31,101 @@ header {
   float: left;
 }
 
-
 .demo_nav {
   li {
     float: left;
     list-style: none;
     a{
-      color: white;
-      background: $darkgrey;
+      color: $white;
+      background-color: $midgrey;
       display: block;
       padding: 15px;
     }
     a:hover, .nav_active {
-      background-color: lightgray;
-      color: #444444;
+      background-color: $lightgrey;
+      color: $darkgrey;
       text-decoration: none;
     }
   }
 }
 
-#color_list {
-  margin-top: 200px;
-  list-style: none;
-  font-size: 2em;
-  li {
-    display:block;
-    padding: 5px;
+.color_list {
+  h2 {
+    margin-top: 200px;
   }
-  :hover {
-    color:lightgray;
-    cursor: pointer;
+  ul {
+//    margin-top: 200px;
+    list-style: none;
+    font-size: 2em;
+    li {
+      display:block;
+      padding: 5px;
+    }
+    :hover {
+      color:$lightgrey;
+      cursor: pointer;
+    }
   }
+}
+
+//$border {
+//  border-radius:10px;-moz-border-radius:10px;-webkit-border-radius:10px;
+//
+//}
+
+#user_info_table {
+//  border-spacing: 0;
+  thead {
+    td:first-child {
+      border-radius: 10px 0 0 0;
+      -webkit-border-radius: 10px 0 0 0;
+      -moz-border-radius: 10px 0 0 0;
+    }
+    td:last-child {
+      border-radius: 0 10px 0 0;
+      -webkit-border-radius: 0 10px 0 0;
+      -moz-border-radius: 0 10px 0 0;
+    }
+    td:only-child{
+      border-radius: 10px 10px 0 0;
+      -webkit-border-radius: 10px 10px 0 0;
+      -moz-border-radius: 10px 10px 0 0;
+    }
+    tr{
+      background-color: $darkgrey;
+      td{
+        text-align: center;
+        font-size: 1.5em;
+        font-weight: 600;
+      }
+      td:hover {
+        background-color: $midgrey;
+      }
+    }
+  }
+  tbody {
+    tr:nth-child(odd) {
+      background: $white;
+      color: $midgrey;
+    }
+    tr:nth-child(even) {
+      background: $midgrey;
+      color: $white;
+    }
+    tr:hover {
+      background: $lightgrey;
+      color: $darkgrey;
+    }
+  }
+  tfoot{
+    background-color: $darkgrey;
+    tr{
+      height: 3px;
+    }
+  }
+}
+
+#join_email_list {
+  background-color: $white;
+  color: $darkgrey;
 }

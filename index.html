@@ -18,12 +18,10 @@
 </header>
 <nav>
     <ul class="demo_nav">
-        <li><a href="" class="nav_active">Demo 1</a></li>
-        <li><a href="">Demo 2</a></li>
-        <li><a href="">Demo 3</a></li>
-        <li><a href="">Demo 4</a></li>
-        <li><a href="">Demo 5</a></li>
-
+        <li><a href="" class="nav_active">Assignent 1</a></li>
+        <li><a href="">Coming soon</a></li>
+        <li><a href="">Coming soon</a></li>
+        <li><a href="">Coming soon</a></li>
     </ul>
 </nav>
 <div id="wrapper">
@@ -34,37 +32,19 @@
 
 
         <div class="content">
-            <video>
-
-
-            </video>
             <div class="row">
                 <div class="col-lg-8">
-                    <div id="pie_chart"></div>
+                    <section id="pie_chart"></section>
                 </div>
-                <div class="col-lg-4">
-                    <h2>Color Choice Count</h2>
+                <aside class="col-lg-4 color_list">
+                    <h2>Color Choice Vote Count</h2>
                     <ul id="color_list"></ul>
-                </div>
-            </div>
-
-            <ol>
-                <li>go</li>
-                <li>away</li>
-                <li>right</li>
-                <li>now</li>
-            </ol>
-
-            <dl>
-                <dt>Coffee</dt>
-                    <dd>Black hot drink</dd>
-                <dt>Milk</dt>
-                    <dd>White cold drink</dd>
-            </dl>
+                </aside>
+            </div><!--End d3 example-->
 
             <div class="row">
                 <div class="col-lg-12">
-                    <table class="table">
+                    <table id="user_info_table" class="table">
                         <thead>
                             <tr>
                                 <td>Name</td>
@@ -73,29 +53,61 @@
                                 <td>Car</td>
                             </tr>
                         </thead>
-                        <tbody id="table_body">
-
-
-                        </tbody>
+                        <tfoot><tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr></tfoot>
+                        <tbody id="table_body"></tbody>
 
                     </table>
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col-lg-12">
-                    <form>
-                        <input type="email">
-                        <input type="tel">
-                        <input type="date">
-                        <input type="tel">
-                        <input type="number">
-                        <input type="checkbox">
-                        <input type="radio">
-                        <button type="reset"></button>
 
+            <div class="row">
+                <div class="col-lg-3"></div>
+                <section id="join_email_list" class="col-lg-6">
+                    <h2>Sign up for Emailer</h2>
+                    <form role="form" class="form-horizontal">
+                        <div class="form-group col-lg-12">
+                            <label for="user_email">Email address</label>
+                            <input type="email" class="form-control" id="user_email" placeholder="Enter email">
+                        </div>
+                        <div class="form-group col-lg-4">
+                            <label for="phone_number">Phone Number</label>
+                            <input type="tel" class="form-control" id="phone_number" placeholder="Enter phone number">
+                        </div>
+                        <div class="form-group col-lg-4">
+                            <label for="date_of_birthday">Date of Birth</label>
+                            <input type="date" class="form-control" id="date_of_birthday" placeholder="Enter date of birth">
+                        </div>
+                        <div class="form-group col-lg-4">
+                            <label for="age">Age</label>
+                            <input type="email" class="form-control" id="age" placeholder="Enter age">
+                        </div>
+                        <div class="form-group checkbox col-lg-12">
+                            <label>
+                                <input type="checkbox" name="sex" value="Male">Male
+                            </label>
+                            <label>
+                                <input type="checkbox" name="sex" value="Female">Female
+                            </label>
+                        </div>
+                        <div class="form-group checkbox col-lg-12">
+                            <label>
+                                <input type="checkbox"> Do you wish to receive updates?
+                            </label>
+                        </div>
+                        <div class="form-group col-sm-10">
+                            <button type="reset" class="btn btn-default">Reset</button>
+                        </div>
+                        <!--<button type="reset" class="btn btn-default">Reset</button>-->
                     </form>
-                </div>
+
+                </section>
+            <div class="col-lg-3"></div>
             </div>
 
             <div class="row">
@@ -105,17 +117,22 @@
                         <img id="drag1" src="images/squirt.jpg" draggable="true"
                              ondragstart="drag(event)" width="221" height="203">
                     </div>
-
                 </div>
             </div>
 
 
         </div><!--End of body content-->
         <footer>
+            <dl>
+                <dt>Coffee</dt>
+                <dd>Black hot drink</dd>
+                <dt>Milk</dt>
+                <dd>White cold drink</dd>
+            </dl>
             <div class="row">
                 <div class="col-lg-12">
                     footer content
-                    <a href="http://cs.utdallas.edu/">UT Dallas Computer Science Department</a>
+                    <a href="http://cs.utdallas.edu/">UT Dallas CS Department</a>
 
                 </div>
             </div>

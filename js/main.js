@@ -11,6 +11,9 @@
 //    }
 //}get_location()
 
+var white = '#FfFeFa';
+
+
 // ---IMAGE DRAG AND DROP---
 function allowDrop(ev) {
     ev.preventDefault();
@@ -38,7 +41,7 @@ function build_pie_chart() {
             count: 15
         },
         {
-            color: "green",
+            color: "Green",
             count: 9
         },
         {
@@ -58,11 +61,14 @@ function build_pie_chart() {
             count: 17
         }
     ];
-
+    var total_count = 0
     // Build out the list items to display the vote count
+    // also get the total count
     $.each(data, function(index, color_count) {
         var html_string = '<li>'+ color_count['color'] + ': ' + color_count['count'] + '</li>';
         $('#color_list').append(html_string)
+
+        total_count += color_count['count']
     });
 
     var margin = {top: 20, right: 20, bottom: 20, left: 20};
@@ -92,6 +98,19 @@ function build_pie_chart() {
         .append("g")
         .attr("transform", "translate(" + width/2 +  "," + ((height/2.25)) + ")");
 
+    svg.append("text")
+        .attr("dy", ".35em")
+        .style("text-anchor", "middle")
+        .attr("class", "inside")
+        .style('font-size', '4.45em')
+        .style('fill', white)
+        .text(function(d) { return total_count+' votes cast'; })
+        .attr('opacity', 0)
+        .transition()
+        .delay(300)
+        .duration(900)
+        .attr('opacity', 1);
+
     var g = svg.selectAll(".arc")
         .data(pie(data))
         .enter().append("g")
@@ -100,12 +119,30 @@ function build_pie_chart() {
             return 'arc '+d.data.color.toLowerCase()+'_arc'
         });
 
-    var current_fill = '';
-
     var arc_path = g.append("path")
         .attr("d", arc)
         .style("fill", function (d) {
-            return d3.hsl(color(d.data.color)).darker(0.5);
+            return d3.hsl(color(d.data.color)).darker(1);
+        })
+        .on('mouseover', function(obj) {
+            svg.select("text")
+                .attr("fill", function(d) { return white; })
+                .transition()
+                .delay(200)
+                .duration(400)
+                .text(function(d){
+                    return obj.data.color;
+                });
+        })
+        .on('mouseout', function(obj) {
+            svg.select("text")
+                .transition()
+                .delay(200)
+                .duration(400)
+                .attr("fill", white)
+                .text(function(d){
+                    return total_count+' votes cast';
+                });
         })
         .transition()
         .duration(800)
@@ -136,7 +173,7 @@ function build_pie_chart() {
             }
         })
         .attr("class", "units")
-        .style('fill', 'white')
+        .style('fill', white)
         .attr('opacity', 0)
         .attr("transform", function(d) {
             var b = (d.startAngle + d.endAngle - Math.PI)/2;
@@ -158,7 +195,6 @@ function build_pie_chart() {
         })
         .text(getPercent)
         .transition().duration(800).attr('opacity', 1).attrTween("transform", textTween);
-
 
     function tweenPie(b) {
         var i = d3.interpolate({startAngle: 0.1*Math.PI, endAngle: 0.1*Math.PI}, b);
@@ -188,61 +224,47 @@ function build_pie_chart() {
         };
     }
 
+    var current_fill = '';
+    var arc_select = $('.arc').children('path')
+
+    arc_select.mouseenter(function() {
+        current_fill = this.style.fill;
+        console.log(current_fill, d3.hsl(current_fill).brighter(1))
+        d3.select(this)
+            .style('fill', d3.hsl(current_fill).brighter(1))
+
+    });
+
+    arc_select.mouseleave(function() {
+        d3.select(this)
+            .style('fill', current_fill)
+    });
+
     var color_list = $('#color_list');
 
     color_list.children().mouseenter(function() {
-        var arc_class = '.' + this.innerHTML.split(':')[0].toLowerCase() + '_arc'
+        var arc_class = '.' + this.innerHTML.split(':')[0].toLowerCase() + '_arc';
+//        console.log(this)
         d3.select(arc_class).transition().duration(300)
             .attr("transform", function (d) {
                 var centroid = arc.centroid(d)
                 var arc_x = centroid[0] * .2;
                 var arc_y = centroid[1] * .2;
+//                console.log(this)
                 return 'translate(' + arc_x + ',' + arc_y + ')'
+            })
+            .attr('fill', function(d) {
+
+                current_fill = this.children[0].style.fill;
+                console.log(current_fill, d3.hsl(current_fill).brighter(1))
+                return d3.hsl(current_fill).brighter(1)
+
             });
     });
 
-    $('.arc').mouseenter(function() {
-        current_fill = d3.select(this).style.fill;
-        console.log(current_fill)
-//        console.log(d3.select(this));
-        d3.select(this).transition().duration(300)
-            .style('fill', d3.hsl(current_fill).brighter(.5))
-
-    });
-//
-////        var arc_class = '.' + this.innerHTML.split(':')[0].toLowerCase() + '_arc'
-//            .on('mouseover', function(d) {
-//                current_fill = this.style.fill;
-//                console.log(d3.select(this));
-//                d3.select(this).transition().duration(300)
-//                    .on('mouseover', function(d) {
-//                        d3.select(this).transition().duration(300)
-//                        .attr('opacity', 1)
-//                            .style('fill', d3.hsl(current_fill).brighter(.5))
-//                            .style('color', 'black')
-//                    }
-//
-//
-//            })
-//            .on('mouseout', function() {
-//                d3.select(this).transition().duration(300)
-//                    .attr('opacity', 1)
-//                    .style('fill', current_fill)
-//                    .style('color', 'black')
-//            })
-//        d3.select(arc_class).transition().duration(300)
-//            .attr("transform", function (d) {
-//                var centroid = arc.centroid(d)
-//                var arc_x = centroid[0] * .2;
-//                var arc_y = centroid[1] * .2;
-//                return 'translate(' + arc_x + ',' + arc_y + ')'
-//            });
-//    });
 
     color_list.children().mouseleave(function() {
         var arc_class = '.' + this.innerHTML.split(':')[0].toLowerCase() + '_arc'
-        console.log(arc_class)
-        console.log()
         d3.select(arc_class).transition().duration(300)
             .attr("transform", 'translate(0,0)');
     });
