@@ -79,7 +79,21 @@ function build_pie_chart() {
     var innerRadius = radius - 90;
 
     var color = d3.scale.ordinal()
-        .range(["blue", "green", "red", "yellow", "purple", "orange"]);
+//        .range([0,100]);
+        .range(["#3972BF", "#00B700", "#B52628", "#DAC40E", "#9333AB", "#EE6D00"]);
+//        .range(["#3E6982", "#48A14E", "#54498D", "#91ADBE", "#A3D9A7", "#A39DC8"]);
+//        .range(["#2183BD", "#C50500", "#C56C00", "#009B0A", "#4296C8", "#FF4F4A"]);
+//        .range(["blue", "green", "red", "yellow", "purple", "orange"]);
+
+//    var color = d3.scale.linear()
+//       .domain([0,10000])
+//       .range([0,100]);
+
+//    var color = d3.scale.category10();
+
+//    var color = d3.scale.linear()
+//        .domain([0, 6 - 1])
+//        .range(["#aad", "#556"]);
 
     var arc = d3.svg.arc()
         .outerRadius(radius)
@@ -114,7 +128,6 @@ function build_pie_chart() {
     var g = svg.selectAll(".arc")
         .data(pie(data))
         .enter().append("g")
-        .attr("class", "arc")
         .attr('class', function (d) {
             return 'arc '+d.data.color.toLowerCase()+'_arc'
         });
@@ -122,7 +135,8 @@ function build_pie_chart() {
     var arc_path = g.append("path")
         .attr("d", arc)
         .style("fill", function (d) {
-            return d3.hsl(color(d.data.color)).darker(1);
+//            console.log(d)
+            return color(d.data.color);
         })
         .on('mouseover', function(obj) {
             svg.select("text")
@@ -229,11 +243,13 @@ function build_pie_chart() {
 
     arc_select.mouseenter(function() {
         current_fill = this.style.fill;
-        console.log(current_fill, d3.hsl(current_fill).brighter(1))
         d3.select(this)
-            .style('fill', d3.hsl(current_fill).brighter(1))
+            .style('fill', function(d) {
+                return d.data.color
+            })
 
     });
+
 
     arc_select.mouseleave(function() {
         d3.select(this)
@@ -253,11 +269,13 @@ function build_pie_chart() {
 //                console.log(this)
                 return 'translate(' + arc_x + ',' + arc_y + ')'
             })
-            .attr('fill', function(d) {
-
-                current_fill = this.children[0].style.fill;
-                console.log(current_fill, d3.hsl(current_fill).brighter(1))
-                return d3.hsl(current_fill).brighter(1)
+        .call(function(d) {
+                var fill_obj = this[0][0].children[0]
+                current_fill = fill_obj.style.fill
+                d3.select(fill_obj).
+                    style('fill', function(d) {
+                        return d.data.color
+                    })
 
             });
     });
@@ -266,7 +284,18 @@ function build_pie_chart() {
     color_list.children().mouseleave(function() {
         var arc_class = '.' + this.innerHTML.split(':')[0].toLowerCase() + '_arc'
         d3.select(arc_class).transition().duration(300)
-            .attr("transform", 'translate(0,0)');
+            .attr("transform", 'translate(0,0)')
+            .call(function (d) {
+                var fill_obj = this[0][0].children[0]
+//                console.log(fill_obj.style.fill)
+//                current_fill = fill_obj.style.fill
+                d3.select(fill_obj).
+                    style('fill', function(d) {
+                        return current_fill
+                    })
+            }
+
+        );
     });
 
 }build_pie_chart();
