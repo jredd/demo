@@ -270,8 +270,8 @@ function build_pie_chart() {
                 return 'translate(' + arc_x + ',' + arc_y + ')'
             })
         .call(function(d) {
-                var fill_obj = this[0][0].children[0]
-                current_fill = fill_obj.style.fill
+                var fill_obj = this[0][0].children[0];
+                current_fill = fill_obj.style.fill;
                 d3.select(fill_obj).
                     style('fill', function(d) {
                         return d.data.color
