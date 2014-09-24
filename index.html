@@ -27,12 +27,10 @@
 <div id="wrapper">
     <div class="container">
         <div class="row">
-            <div class="col-lg-12"></div>
-        </div>
+            <div class="col-lg-12">
+                <div class="content">
 
-
-        <div class="content">
-            <div class="row">
+            <div class="row"><!--d3 Group-->
                 <div class="col-lg-8">
                     <section id="pie_chart"></section>
                 </div>
@@ -40,9 +38,8 @@
                     <h2>Color Choice Vote Count</h2>
                     <ul id="color_list"></ul>
                 </aside>
-            </div><!--End d3 example-->
-
-            <div class="row">
+            </div><!--End d3 Group-->
+            <div class="row"><!--Table Group-->
                 <div class="col-lg-12">
                     <table id="user_info_table" class="table">
                         <thead>
@@ -53,20 +50,19 @@
                                 <td>Car</td>
                             </tr>
                         </thead>
-                        <tfoot><tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr></tfoot>
+                        <tfoot>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tfoot>
                         <tbody id="table_body"></tbody>
-
                     </table>
                 </div>
-            </div>
-
-
-            <div class="row">
+            </div><!--End Table Group-->
+            <div class="row"><!--Form Group-->
                 <div class="col-lg-3"></div>
                 <section id="join_email_list" class="col-lg-6">
                     <h2>Sign up for Emailer</h2>
@@ -105,9 +101,8 @@
                         </div>
                         <!--<button type="reset" class="btn btn-default">Reset</button>-->
                     </form>
-
                 </section>
-            <div class="col-lg-3"></div>
+            <div class="col-lg-3"></div><!--Form Group-->
             </div>
 
             <div class="row">
@@ -122,6 +117,8 @@
 
 
         </div><!--End of body content-->
+            </div>
+        </div>
         <footer>
             <dl>
                 <dt>Coffee</dt>
