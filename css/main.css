@@ -6,6 +6,14 @@ html, body {
   background-color: #7d8dae;
   color: #fffefa; }
 
+#div1, #div2 {
+  width: 221px;
+  height: 203px;
+  border: 1px solid #aaaaaa; }
+  #div1 img, #div2 img {
+    padding: 0;
+    margin: 0; }
+
 header {
   background: url("../images/jason-redd-logo.png") no-repeat top center;
   height: 100px; }
@@ -20,18 +28,20 @@ header {
   height: 100%;
   margin: 0 auto -200px; }
 
-.demo_nav li {
-  float: left;
-  list-style: none; }
-  .demo_nav li a {
-    color: #fffefa;
-    background-color: darkgray;
-    display: block;
-    padding: 15px; }
-  .demo_nav li a:hover, .demo_nav li .nav_active {
-    background-color: lightgray;
-    color: #686869;
-    text-decoration: none; }
+.demo_nav {
+  display: inline; }
+  .demo_nav li {
+    float: left;
+    list-style: none; }
+    .demo_nav li a {
+      color: #fffefa;
+      background-color: darkgray;
+      display: block;
+      padding: 15px; }
+    .demo_nav li a:hover, .demo_nav li .nav_active {
+      background-color: lightgray;
+      color: #686869;
+      text-decoration: none; }
 
 .color_list h2 {
   margin-top: 200px; }
@@ -84,6 +94,9 @@ header {
   color: #686869; }
 
 footer {
+  -webkit-box-shadow: inset 0px 30px 90px -20px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: inset 0px 30px 90px -20px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0px 30px 90px -20px rgba(0, 0, 0, 0.3);
   background-color: #686869; }
   footer dd {
     text-indent: 25px; }
@@ -97,6 +110,8 @@ footer {
   footer .footer_links {
     text-align: center; }
 
-footer, .push {
-  height: 200px;
+.push {
   margin-top: 15px; }
+
+footer, .push {
+  height: 200px; }

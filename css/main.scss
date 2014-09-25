@@ -1,9 +1,9 @@
 $blue: #7d8dae;
-$lightblue: #ADB8CF;
+$light_blue: #ADB8CF;
 $white: #FfFeFa;
-$midgrey: #A9A9A9;
-$lightgrey: #D3D3D3;
-$darkgrey: #686869;
+$mid_grey: #A9A9A9;
+$light_grey: #D3D3D3;
+$dark_grey: #686869;
 
 * {
   margin: 0;
@@ -13,20 +13,17 @@ html, body {
   height: 100%;
   background-color: $blue;
   color: $white;
-//  margin: 0 auto 4em;
-//  margin: 0 auto -310px;
 }
 
-//#div1, #div2 {
-//  width:221px;
-//  height:203px;
-////  padding:10px;
-//  border:1px solid #aaaaaa;
-//  img {
-//    padding: 0;
-//    margin: 0;
-//  }
-//}
+#div1, #div2 {
+  width:221px;
+  height:203px;
+  border:1px solid #aaaaaa;
+  img {
+    padding: 0;
+    margin: 0;
+  }
+}
 
 header {
   background: url("../images/jason-redd-logo.png") no-repeat top center;
@@ -44,24 +41,23 @@ header {
   min-height: 100%;
   height: auto !important;
   height: 100%;
-//  margin: 0 auto ;
-//  margin: 0 auto -4em;
   margin: 0 auto -200px;
 }
 
 .demo_nav {
+  display: inline;
   li {
     float: left;
     list-style: none;
     a{
       color: $white;
-      background-color: $midgrey;
+      background-color: $mid_grey;
       display: block;
       padding: 15px;
     }
     a:hover, .nav_active {
-      background-color: $lightgrey;
-      color: $darkgrey;
+      background-color: $light_grey;
+      color: $dark_grey;
       text-decoration: none;
     }
   }
@@ -80,21 +76,13 @@ header {
       padding: 5px;
     }
     :hover {
-      color:$lightgrey;
+      color:$light_grey;
       cursor: pointer;
     }
   }
 }
 
-//$border {
-//  border-radius:10px;-moz-border-radius:10px;-webkit-border-radius:10px;
-//
-//}
-
-
-
 #user_info_table {
-//  border-spacing: 0;
   thead {
     td:first-child {
       border-radius: 10px 0 0 0;
@@ -112,33 +100,33 @@ header {
       -moz-border-radius: 10px 10px 0 0;
     }
     tr{
-      background-color: $darkgrey;
+      background-color: $dark_grey;
       td{
         text-align: center;
         font-size: 1.5em;
         font-weight: 600;
       }
       td:hover {
-        background-color: $midgrey;
+        background-color: $mid_grey;
       }
     }
   }
   tbody {
     tr:nth-child(odd) {
       background: $white;
-      color: $midgrey;
+      color: $mid_grey;
     }
     tr:nth-child(even) {
-      background: $midgrey;
+      background: $mid_grey;
       color: $white;
     }
     tr:hover {
-      background: $lightgrey;
-      color: $darkgrey;
+      background: $light_grey;
+      color: $dark_grey;
     }
   }
   tfoot{
-    background-color: $darkgrey;
+    background-color: $dark_grey;
     tr{
       height: 3px;
     }
@@ -147,19 +135,19 @@ header {
 
 #join_email_list {
   background-color: $white;
-  color: $darkgrey;
+  color: $dark_grey;
 }
 
-
-
-
 footer {
-  background-color: $darkgrey;
+  -webkit-box-shadow: inset 0px 30px 90px -20px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: inset 0px 30px 90px -20px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0px 30px 90px -20px rgba(0, 0, 0, 0.3);
+  background-color: $dark_grey;
   dd {
     text-indent: 25px;
   }
   a {
-    color: $lightblue;
+    color: $light_blue;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -171,10 +159,10 @@ footer {
     text-align: center;
   }
 }
+.push {
+  margin-top: 15px;
+}
 
 footer, .push {
   height: 200px;
-  margin-top: 15px;
-//  clear: both;
-//  height: 4em;
 }
