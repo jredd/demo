@@ -1,34 +1,52 @@
 $blue: #7d8dae;
+$lightblue: #ADB8CF;
 $white: #FfFeFa;
 $midgrey: #A9A9A9;
 $lightgrey: #D3D3D3;
 $darkgrey: #686869;
 
-body {
-  background-color: $blue;
-  color: $white;
+* {
+  margin: 0;
 }
 
-#div1, #div2 {
-  width:221px;
-  height:203px;
-//  padding:10px;
-  border:1px solid #aaaaaa;
-  img {
-    padding: 0;
-    margin: 0;
-  }
+html, body {
+  height: 100%;
+  background-color: $blue;
+  color: $white;
+//  margin: 0 auto 4em;
+//  margin: 0 auto -310px;
 }
+
+//#div1, #div2 {
+//  width:221px;
+//  height:203px;
+////  padding:10px;
+//  border:1px solid #aaaaaa;
+//  img {
+//    padding: 0;
+//    margin: 0;
+//  }
+//}
 
 header {
   background: url("../images/jason-redd-logo.png") no-repeat top center;
   height: 100px;
+
 }
 
 // Allow the head text to be readable for bots
 .bot_readable {
   text-indent: -9999px;
   float: left;
+}
+
+#wrapper {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+//  margin: 0 auto ;
+//  margin: 0 auto -4em;
+  margin: 0 auto -200px;
 }
 
 .demo_nav {
@@ -72,6 +90,8 @@ header {
 //  border-radius:10px;-moz-border-radius:10px;-webkit-border-radius:10px;
 //
 //}
+
+
 
 #user_info_table {
 //  border-spacing: 0;
@@ -128,4 +148,33 @@ header {
 #join_email_list {
   background-color: $white;
   color: $darkgrey;
+}
+
+
+
+
+footer {
+  background-color: $darkgrey;
+  dd {
+    text-indent: 25px;
+  }
+  a {
+    color: $lightblue;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+  a:hover {
+    color: $blue;
+  }
+  .footer_links {
+    text-align: center;
+  }
+}
+
+footer, .push {
+  height: 200px;
+  margin-top: 15px;
+//  clear: both;
+//  height: 4em;
 }

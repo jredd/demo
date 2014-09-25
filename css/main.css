@@ -1,14 +1,10 @@
-body {
+* {
+  margin: 0; }
+
+html, body {
+  height: 100%;
   background-color: #7d8dae;
   color: #fffefa; }
-
-#div1, #div2 {
-  width: 221px;
-  height: 203px;
-  border: 1px solid #aaaaaa; }
-  #div1 img, #div2 img {
-    padding: 0;
-    margin: 0; }
 
 header {
   background: url("../images/jason-redd-logo.png") no-repeat top center;
@@ -17,6 +13,12 @@ header {
 .bot_readable {
   text-indent: -9999px;
   float: left; }
+
+#wrapper {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -200px; }
 
 .demo_nav li {
   float: left;
@@ -80,3 +82,21 @@ header {
 #join_email_list {
   background-color: #fffefa;
   color: #686869; }
+
+footer {
+  background-color: #686869; }
+  footer dd {
+    text-indent: 25px; }
+  footer a {
+    color: #adb8cf;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none; }
+  footer a:hover {
+    color: #7d8dae; }
+  footer .footer_links {
+    text-align: center; }
+
+footer, .push {
+  height: 200px;
+  margin-top: 15px; }
