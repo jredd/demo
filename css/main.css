@@ -6,6 +6,9 @@ html, body {
   background-color: #7d8dae;
   color: #fffefa; }
 
+h1 {
+  font-family: "estilo-pro",sans-serif; }
+
 #div1, #div2 {
   width: 221px;
   height: 203px;
