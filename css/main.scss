@@ -8,10 +8,16 @@ $dark_grey: #686869;
 * {
   margin: 0;
   font-style: normal;
-  p,li, dd span{
+  li, dd span{
     font-family: "estilo-pro",sans-serif;
     font-weight: 300;
     font-size: 1.5em;
+  }
+  p {
+    font-family: Georgia, serif;
+    font-weight: 100;
+    font-size: 1.15em;
+    letter-spacing: .05em;
   }
 
   h1, h2, h3, h4, h5, h6, dt {
