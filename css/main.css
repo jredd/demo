@@ -46,7 +46,7 @@ header {
   min-height: 100%;
   height: auto !important;
   height: 100%;
-  margin: 0 auto -205px; }
+  margin: 0 auto -250px; }
 
 .demo_nav {
   display: inline; }
@@ -144,4 +144,4 @@ footer {
   height: 200px; }
 
 footer, .push {
-  height: 205px; }
+  height: 250px; }
