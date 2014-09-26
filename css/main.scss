@@ -11,7 +11,7 @@ $dark_grey: #686869;
   p,li, dd span{
     font-family: "estilo-pro",sans-serif;
     font-weight: 300;
-    font-size: 1.25em;
+    font-size: 1.5em;
   }
 
   h1, h2, h3, h4, h5, h6, dt {
@@ -84,7 +84,7 @@ header {
   min-height: 100%;
   height: auto !important;
   height: 100%;
-  margin: 0 auto -250px;
+  margin: 0 auto -225px;
 }
 
 .demo_nav {
@@ -214,6 +214,10 @@ footer {
   margin-top: 15px;
 }
 
+.margin-top {
+  margin-top: 25px;
+}
+
 #side_bar {
   top: 0px;
   left: 1155px;
@@ -224,5 +228,5 @@ footer {
 }
 
 footer, .push {
-  height: 250px;
+  height: 225px;
 }

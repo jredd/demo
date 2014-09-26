@@ -4,7 +4,7 @@
   * p, * li, * dd span {
     font-family: "estilo-pro",sans-serif;
     font-weight: 300;
-    font-size: 1.25em; }
+    font-size: 1.5em; }
   * h1, * h2, * h3, * h4, * h5, * h6, * dt {
     font-family: "bebas-neue",sans-serif;
     font-weight: 400; }
@@ -58,7 +58,7 @@ header {
   min-height: 100%;
   height: auto !important;
   height: 100%;
-  margin: 0 auto -250px; }
+  margin: 0 auto -225px; }
 
 .demo_nav {
   display: inline; }
@@ -151,6 +151,9 @@ footer {
 .push {
   margin-top: 15px; }
 
+.margin-top {
+  margin-top: 25px; }
+
 #side_bar {
   top: 0px;
   left: 1155px;
@@ -160,4 +163,4 @@ footer {
   height: 200px; }
 
 footer, .push {
-  height: 250px; }
+  height: 225px; }
