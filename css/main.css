@@ -6,9 +6,6 @@ html, body {
   background-color: #7d8dae;
   color: #fffefa; }
 
-h1 {
-  font-family: "estilo-pro-light",sans-serif; }
-
 #div1, #div2 {
   width: 221px;
   height: 203px;
@@ -20,6 +17,17 @@ h1 {
 header {
   background: url("../images/jason-redd-logo.png") no-repeat top center;
   height: 100px; }
+
+.content h1 {
+  font-family: "bebas-neue",sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2em; }
+.content p {
+  font-family: "estilo-pro-light",sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: .5em; }
 
 .bot_readable {
   text-indent: -9999px;
@@ -102,9 +110,16 @@ footer {
   box-shadow: inset 0px 30px 90px -20px rgba(0, 0, 0, 0.3);
   background-color: #686869; }
   footer dt {
-    font-family: "bebas-neue",sans-serif; }
+    font-family: "bebas-neue",sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1em; }
   footer dd {
-    text-indent: 25px; }
+    text-indent: 25px;
+    font-family: "estilo-pro-light",sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: .75em; }
   footer a {
     color: #adb8cf;
     -webkit-appearance: none;
