@@ -41,7 +41,7 @@ header {
   min-height: 100%;
   height: auto !important;
   height: 100%;
-  margin: 0 auto -200px;
+  margin: 0 auto -205px;
 }
 
 .demo_nav {
@@ -54,6 +54,7 @@ header {
       background-color: $mid_grey;
       display: block;
       padding: 15px;
+
     }
     a:hover, .nav_active {
       background-color: $light_grey;
@@ -139,6 +140,9 @@ header {
 }
 
 footer {
+//  position: fixed;
+//  bottom: 0;
+//  width: 100%;
   -webkit-box-shadow: inset 0px 30px 90px -20px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: inset 0px 30px 90px -20px rgba(0, 0, 0, 0.3);
   box-shadow: inset 0px 30px 90px -20px rgba(0, 0, 0, 0.3);
@@ -163,6 +167,15 @@ footer {
   margin-top: 15px;
 }
 
-footer, .push {
+#side_bar {
+  top: 0px;
+  left: 1155px;
+  position: absolute;
+  background: $white;
+  width: 150px;
   height: 200px;
+}
+
+footer, .push {
+  height: 205px;
 }

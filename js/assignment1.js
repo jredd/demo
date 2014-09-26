@@ -144,6 +144,7 @@ function build_pie_chart() {
                 .transition()
                 .delay(200)
                 .duration(400)
+                .attr('opacity', 1)
                 .text(function(d){
                     return obj.data.color;
                 });
@@ -316,3 +317,18 @@ $.getJSON('table_data.json', function(return_data){
         $('#table_body').append(html_string);
     })
 });
+
+$(window).scroll(function(e) {
+    console.log('scrolling')
+//    var sw = $('.selectedwork'),
+//        pg = $('.projectsgrid'),
+//        diff = pg[0].offsetTop - window.pageYOffset;
+//
+//    sw.css('background-color', diff < 100 ? 'yellow' : '');
+});
+
+$('input').on('input', function(k) {
+    console.log($(this).val())
+})
+
+$.each()

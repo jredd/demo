@@ -26,7 +26,7 @@ header {
   min-height: 100%;
   height: auto !important;
   height: 100%;
-  margin: 0 auto -200px; }
+  margin: 0 auto -205px; }
 
 .demo_nav {
   display: inline; }
@@ -113,5 +113,13 @@ footer {
 .push {
   margin-top: 15px; }
 
-footer, .push {
+#side_bar {
+  top: 0px;
+  left: 1155px;
+  position: absolute;
+  background: #fffefa;
+  width: 150px;
   height: 200px; }
+
+footer, .push {
+  height: 205px; }
