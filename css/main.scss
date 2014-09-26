@@ -93,6 +93,7 @@ header {
   margin: 0 auto -225px;
 }
 
+//NAV BAR HERE------>
 .demo_nav {
   display: inline;
   li {
@@ -106,8 +107,7 @@ header {
       color: $white;
       background-color: $mid_grey;
       display: block;
-      padding: 8px 15px;
-//      padding: 15px;
+      padding: 10px 15px 5px 15px;
     }
     a:hover, .nav_active {
       background-color: $light_grey;
@@ -192,6 +192,9 @@ header {
 }
 
 footer {
+  //  position: fixed;
+  //  bottom: 0;
+  //  width: 100%;
   -webkit-box-shadow: inset 0px 30px 90px -20px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: inset 0px 30px 90px -20px rgba(0, 0, 0, 0.3);
   box-shadow: inset 0px 30px 90px -20px rgba(0, 0, 0, 0.3);
@@ -213,6 +216,7 @@ footer {
     color: $blue;
   }
   .footer_links {
+    margin-top:5px;
     text-align: center;
   }
 }
@@ -224,14 +228,14 @@ footer {
   margin-top: 25px;
 }
 
-#side_bar {
-  top: 0px;
-  left: 1155px;
-  position: absolute;
-  background: $white;
-  width: 150px;
-  height: 200px;
-}
+//#side_bar {
+//  top: 0px;
+//  left: 1155px;
+//  position: absolute;
+//  background: $white;
+//  width: 150px;
+//  height: 200px;
+//}
 
 footer, .push {
   height: 225px;

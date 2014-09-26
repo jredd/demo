@@ -318,17 +318,11 @@ $.getJSON('table_data.json', function(return_data){
     })
 });
 
-$(window).scroll(function(e) {
-    console.log('scrolling')
+//$(window).scroll(function(e) {
+//    console.log('scrolling')
 //    var sw = $('.selectedwork'),
 //        pg = $('.projectsgrid'),
 //        diff = pg[0].offsetTop - window.pageYOffset;
 //
 //    sw.css('background-color', diff < 100 ? 'yellow' : '');
-});
-
-$('input').on('input', function(k) {
-    console.log($(this).val())
-})
-
-$.each()
+//});

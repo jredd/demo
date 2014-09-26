@@ -78,7 +78,7 @@ header {
       color: #fffefa;
       background-color: darkgray;
       display: block;
-      padding: 8px 15px; }
+      padding: 10px 15px 5px 15px; }
     .demo_nav li a:hover, .demo_nav li .nav_active {
       background-color: lightgray;
       color: #686869;
@@ -151,6 +151,7 @@ footer {
   footer a:hover {
     color: #7d8dae; }
   footer .footer_links {
+    margin-top: 5px;
     text-align: center; }
 
 .push {
@@ -158,14 +159,6 @@ footer {
 
 .margin-top {
   margin-top: 25px; }
-
-#side_bar {
-  top: 0px;
-  left: 1155px;
-  position: absolute;
-  background: #fffefa;
-  width: 150px;
-  height: 200px; }
 
 footer, .push {
   height: 225px; }
