@@ -115,8 +115,7 @@ function build_pie_chart() {
     svg.append("text")
         .attr("dy", ".35em")
         .style("text-anchor", "middle")
-        .attr("class", "inside")
-        .style('font-size', '4.45em')
+        .attr("class", "pie_inside")
         .style('fill', white)
         .text(function(d) { return total_count+' votes cast'; })
         .attr('opacity', 0)
@@ -128,15 +127,11 @@ function build_pie_chart() {
     var g = svg.selectAll(".arc")
         .data(pie(data))
         .enter().append("g")
-        .attr('class', function (d) {
-            return 'arc '+d.data.color.toLowerCase()+'_arc'
-        });
+        .attr('class', function (d) { return 'arc '+d.data.color.toLowerCase()+'_arc'; });
 
     var arc_path = g.append("path")
         .attr("d", arc)
-        .style("fill", function (d) {
-//            console.log(d)
-            return color(d.data.color);
+        .style("fill", function (d) { return color(d.data.color);
         })
         .on('mouseover', function(obj) {
             svg.select("text")
@@ -155,15 +150,11 @@ function build_pie_chart() {
                 .delay(200)
                 .duration(400)
                 .attr("fill", white)
-                .text(function(d){
-                    return total_count+' votes cast';
-                });
+                .text(function(d){ return total_count+' votes cast'; });
         })
         .transition()
-        .duration(800)
-        .attrTween("d", tweenPie);
-
-
+            .duration(800)
+            .attrTween("d", tweenPie);
 
     var textOffset = innerRadius/6;
 
@@ -231,8 +222,8 @@ function build_pie_chart() {
             a = 0;
         }
         var b = (d.startAngle + d.endAngle - Math.PI)/2;
-
         var fn = d3.interpolateNumber(a, b);
+
         return function(t) {
             var val = fn(t);
             return "translate(" + Math.cos(val) * (innerRadius+textOffset) + "," + Math.sin(val) * (innerRadius+textOffset) + ")";
@@ -240,56 +231,53 @@ function build_pie_chart() {
     }
 
     var current_fill = '';
-    var arc_select = $('.arc').children('path')
-
+    var arc_select = $('.arc').children('path');
+    // Setup the mouse enter dot change the arcs color
     arc_select.mouseenter(function() {
         current_fill = this.style.fill;
         d3.select(this)
             .style('fill', function(d) {
                 return d.data.color
-            })
-
+            });
     });
-
 
     arc_select.mouseleave(function() {
         d3.select(this)
-            .style('fill', current_fill)
+            .style('fill', current_fill);
     });
 
+    // Setup the mouse enter action for the list of colors
     var color_list = $('#color_list');
 
     color_list.children().mouseenter(function() {
         var arc_class = '.' + this.innerHTML.split(':')[0].toLowerCase() + '_arc';
-//        console.log(this)
         d3.select(arc_class).transition().duration(300)
             .attr("transform", function (d) {
-                var centroid = arc.centroid(d)
+                var centroid = arc.centroid(d);
                 var arc_x = centroid[0] * .2;
                 var arc_y = centroid[1] * .2;
-//                console.log(this)
                 return 'translate(' + arc_x + ',' + arc_y + ')'
             })
         .call(function(d) {
                 var fill_obj = this[0][0].children[0];
+
                 current_fill = fill_obj.style.fill;
                 d3.select(fill_obj).
                     style('fill', function(d) {
                         return d.data.color
                     })
-
             });
     });
 
 
     color_list.children().mouseleave(function() {
-        var arc_class = '.' + this.innerHTML.split(':')[0].toLowerCase() + '_arc'
+        var arc_class = '.' + this.innerHTML.split(':')[0].toLowerCase() + '_arc';
+
         d3.select(arc_class).transition().duration(300)
             .attr("transform", 'translate(0,0)')
             .call(function (d) {
-                var fill_obj = this[0][0].children[0]
-//                console.log(fill_obj.style.fill)
-//                current_fill = fill_obj.style.fill
+                var fill_obj = this[0][0].children[0];
+
                 d3.select(fill_obj).
                     style('fill', function(d) {
                         return current_fill
@@ -301,10 +289,7 @@ function build_pie_chart() {
 
 }build_pie_chart();
 
-
-
-//----TABLE DATA---
-
+//----Build TABLE DATA---
 $.getJSON('table_data.json', function(return_data){
     // loop throught the data and prepare the html strings
     $.each(return_data, function(index, data){
@@ -318,11 +303,43 @@ $.getJSON('table_data.json', function(return_data){
     })
 });
 
-//$(window).scroll(function(e) {
-//    console.log('scrolling')
-//    var sw = $('.selectedwork'),
-//        pg = $('.projectsgrid'),
-//        diff = pg[0].offsetTop - window.pageYOffset;
-//
-//    sw.css('background-color', diff < 100 ? 'yellow' : '');
-//});
+// grocery list
+$('#add_item').click(function(e) {
+    var grocery_error = $('#grocery_error');
+    var grocery_length_error = $('#grocery_length_error');
+    grocery_error.addClass('hidden');
+    grocery_length_error.addClass('hidden');
+
+    var grocery_input = $('#grocery_input');
+    var field_value = grocery_input.val().trim();
+    var grocery_list = $('#grocery_list');
+    var list_length = grocery_list.children().length;
+
+    if (field_value.length > 0){
+        if (list_length < 7) {
+            if ($('#grocery_span').length) {
+                grocery_list.html('')
+            }
+            var html_string = '<li>'+field_value+'</li>'
+            grocery_input.val('');
+            grocery_input.select();
+        }else {
+            grocery_length_error.removeClass('hidden')
+        }
+
+        grocery_list.append(html_string)
+    }else {
+        console.log('nothing in input');
+        grocery_error.removeClass('hidden')
+    }
+});
+
+$('#grocery_list_reset').click(function(e) {
+    $('#grocery_list').html('<span id="grocery_span">Add grocery items to your list</span>')
+});
+
+$('#grocery_input').keydown(function(e) {
+    if(e.which == 13) {
+        $('#add_item').trigger('click')
+    }
+});
