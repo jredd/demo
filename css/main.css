@@ -73,7 +73,7 @@ header {
       color: #fffefa;
       background-color: darkgray;
       display: block;
-      padding: 8  px 15px; }
+      padding: 8px 15px; }
     .demo_nav li a:hover, .demo_nav li .nav_active {
       background-color: lightgray;
       color: #686869;
