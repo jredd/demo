@@ -68,19 +68,12 @@ header {
     color: white;
     text-decoration: none; }
   header .tag_line {
-    display: block;
-    font-family: "estilo-pro",sans-serif;
-    font-size: .45em;
-    margin-top: -35px;
-    margin-left: -5px;
-    letter-spacing: .03em; }
-  header .tag_line1 {
     font-family: "etica-display",sans-serif;
     display: block;
     font-size: .25em;
-    margin-top: -80px;
-    margin-left: -5px;
-    letter-spacing: .35em; }
+    margin-top: -35px;
+    margin-left: -6px;
+    letter-spacing: .36em; }
 
 #wrapper {
   min-height: 100%;
