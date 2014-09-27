@@ -5,13 +5,16 @@ $mid_grey: #A9A9A9;
 $light_grey: #D3D3D3;
 $dark_grey: #686869;
 $red: #B52628;
+$charcoal: #555;
+$place_holder: rgba(85, 85, 85, 0.75);
 
 * {
   margin: 0;
   font-style: normal;
   li, dd span, input, body{
 //    font-family: "estilo-pro",sans-serif;
-    font-family: "adobe-garamond-pro",sans-serif;
+//    font-family: "adobe-garamond-pro",sans-serif;
+    font-family: "etica-display",sans-serif;
     font-weight: 300;
     font-size: 1.5em;
   }
@@ -53,11 +56,26 @@ $red: #B52628;
     font-weight: 400;
     letter-spacing: .05em;
     font-size: 1.1em !important;
+//    color: $charcoal;
+//    color: transparent;
+//    color: rgba(85, 85, 85, 0.2) !important;
   }
   button {
     letter-spacing: .05em;
   }
+}
 
+input::-webkit-input-placeholder {
+  color: $place_holder !important;
+}
+input:-moz-placeholder { /* Firefox 18- */
+  color: $place_holder !important;
+}
+input::-moz-placeholder {  /* Firefox 19+ */
+  color: $place_holder !important;
+}
+input:-ms-input-placeholder {
+  color: $place_holder !important;
 }
 
 html, body {
@@ -82,7 +100,8 @@ header {
     text-decoration: none;
   }
   .tag_line {
-    font-family: "adobe-garamond-pro",sans-serif;
+//    font-family: "adobe-garamond-pro",sans-serif;
+    font-family: "etica-display",sans-serif;
     display: block;
 //    font-family: "estilo-pro",sans-serif;
     font-size: .25em;
@@ -204,7 +223,13 @@ svg {
 #join_email_list {
   background-color: $white;
   color: $dark_grey;
+  button {
+    width: 30%;
+    margin-top: 10px;
+  }
 }
+
+
 
 .error{
   color: $red;
@@ -214,7 +239,7 @@ svg {
 
 #grocery_aside {
   .btn_xl {
-    width: 50%;
+    width: 49.35%;
     padding: 10px 16px;
     font-size: 18px;
     line-height: 1.33;

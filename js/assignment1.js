@@ -347,4 +347,6 @@ $('#grocery_list_reset').click(function(e) {
 
 $('#email_subscription_form').submit(function (e){
     e.preventDefault();
+
+//    $('#email_subscription_form').innerHTML() = 'hello';
 });
