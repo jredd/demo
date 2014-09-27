@@ -74,6 +74,13 @@ header {
     margin-top: -35px;
     margin-left: -5px;
     letter-spacing: .35em; }
+  header .tag_line1 {
+    font-family: "etica-display",sans-serif;
+    display: block;
+    font-size: .25em;
+    margin-top: -35px;
+    margin-left: -5px;
+    letter-spacing: .35em; }
 
 #wrapper {
   min-height: 100%;

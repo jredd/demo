@@ -109,6 +109,16 @@ header {
     margin-left: -5px;
     letter-spacing: .35em;
   }
+  .tag_line1 {
+    //    font-family: "adobe-garamond-pro",sans-serif;
+    font-family: "etica-display",sans-serif;
+    display: block;
+//    font-family: "estilo-pro",sans-serif;
+    font-size: .25em;
+    margin-top: -35px;
+    margin-left: -5px;
+    letter-spacing: .35em;
+  }
 }
 
 #wrapper {
@@ -281,6 +291,7 @@ footer {
     text-align: center;
   }
 }
+
 .push {
   margin-top: 15px;
 }
