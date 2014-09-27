@@ -70,9 +70,10 @@ header {
   header .tag_line {
     font-family: "etica-display",sans-serif;
     display: block;
-    font-size: .25em;
+    font-size: .225em;
     margin-top: -35px;
     margin-left: -6px;
+    font-weight: 200;
     letter-spacing: .36em; }
 
 #wrapper {
