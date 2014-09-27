@@ -63,6 +63,9 @@ $place_holder: rgba(85, 85, 85, 0.75);
   button {
     letter-spacing: .05em;
   }
+  thead {
+    letter-spacing: .05em;
+  }
 }
 
 input::-webkit-input-placeholder {
@@ -103,7 +106,7 @@ header {
 //    font-family: "adobe-garamond-pro",sans-serif;
     font-family: "etica-display",sans-serif;
     display: block;
-//    font-family: "estilo-pro",sans-serif;
+    font-family: "estilo-pro",sans-serif;
     font-size: .25em;
     margin-top: -35px;
     margin-left: -5px;
