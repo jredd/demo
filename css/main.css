@@ -32,6 +32,8 @@
     font-weight: 400;
     letter-spacing: .05em;
     font-size: 1.1em !important; }
+  * button {
+    letter-spacing: .05em; }
 
 html, body {
   height: 100%;
@@ -88,7 +90,7 @@ header {
   margin-top: 200px; }
 .color_list ul {
   list-style: none;
-  font-size: 2em; }
+  font-size: 1.25em; }
   .color_list ul li {
     display: block;
     padding: 5px; }

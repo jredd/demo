@@ -54,6 +54,9 @@ $red: #B52628;
     letter-spacing: .05em;
     font-size: 1.1em !important;
   }
+  button {
+    letter-spacing: .05em;
+  }
 
 }
 
@@ -126,7 +129,7 @@ header {
   }
   ul {
     list-style: none;
-    font-size: 2em;
+    font-size: 1.25em;
     li {
       display:block;
       padding: 5px;

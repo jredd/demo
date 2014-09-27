@@ -304,10 +304,15 @@ $.getJSON('table_data.json', function(return_data){
 });
 
 // grocery list
-$('#add_item').click(function(e) {
+$('#grocery_list_form').submit(function (e){
+    e.preventDefault();
+
+    console.log(e)
+
     var grocery_error = $('#grocery_error');
     var grocery_length_error = $('#grocery_length_error');
-    grocery_error.addClass('hidden');
+//    grocery_error.addClass('hidden');
+//    grocery_length_error.hide(500);
     grocery_length_error.addClass('hidden');
 
     var grocery_input = $('#grocery_input');
@@ -324,22 +329,22 @@ $('#add_item').click(function(e) {
             grocery_input.val('');
             grocery_input.select();
         }else {
+
+            grocery_length_error.fadeIn(1000)
             grocery_length_error.removeClass('hidden')
         }
 
         grocery_list.append(html_string)
-    }else {
-        console.log('nothing in input');
-        grocery_error.removeClass('hidden')
     }
-});
+})
 
 $('#grocery_list_reset').click(function(e) {
+    e.preventDefault()
+    $('#grocery_length_error').hide(1000)
     $('#grocery_list').html('<span id="grocery_span">Add grocery items to your list</span>')
 });
 
-$('#grocery_input').keydown(function(e) {
-    if(e.which == 13) {
-        $('#add_item').trigger('click')
-    }
+
+$('#email_subscription_form').submit(function (e){
+    e.preventDefault();
 });
