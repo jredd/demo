@@ -73,27 +73,13 @@ function build_pie_chart() {
 
     var margin = {top: 20, right: 20, bottom: 20, left: 20};
     var width = 850 - margin.left - margin.right;
-    var height = 850 - margin.top - margin.bottom;
+    var height = 795 - margin.top - margin.bottom;
 
-    var radius = (Math.min(width, height) / 2)-100;
+    var radius = (Math.min(850, 850) / 2)-100;
     var innerRadius = radius - 90;
 
     var color = d3.scale.ordinal()
-//        .range([0,100]);
         .range(["#3972BF", "#00B700", "#B52628", "#DAC40E", "#9333AB", "#EE6D00"]);
-//        .range(["#3E6982", "#48A14E", "#54498D", "#91ADBE", "#A3D9A7", "#A39DC8"]);
-//        .range(["#2183BD", "#C50500", "#C56C00", "#009B0A", "#4296C8", "#FF4F4A"]);
-//        .range(["blue", "green", "red", "yellow", "purple", "orange"]);
-
-//    var color = d3.scale.linear()
-//       .domain([0,10000])
-//       .range([0,100]);
-
-//    var color = d3.scale.category10();
-
-//    var color = d3.scale.linear()
-//        .domain([0, 6 - 1])
-//        .range(["#aad", "#556"]);
 
     var arc = d3.svg.arc()
         .outerRadius(radius)
@@ -110,7 +96,7 @@ function build_pie_chart() {
         .attr("height", height)
         .attr('class', 'pie_chart_svg')
         .append("g")
-        .attr("transform", "translate(" + width/2 +  "," + ((height/2.25)) + ")");
+        .attr("transform", "translate(" + width/2 +  "," + ((height/2)) + ")");
 
     svg.append("text")
         .attr("dy", ".35em")
@@ -149,6 +135,7 @@ function build_pie_chart() {
                 .transition()
                 .delay(200)
                 .duration(400)
+                .attr('opacity', 1)
                 .attr("fill", white)
                 .text(function(d){ return total_count+' votes cast'; });
         })

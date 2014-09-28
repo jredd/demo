@@ -6,7 +6,7 @@
     font-weight: 300;
     font-size: 1.5em; }
   * p, * tbody tr {
-    font-family: "adobe-garamond-pro",sans-serif;
+    font-family: "etica-display",sans-serif;
     font-weight: 100;
     font-size: 1.15em;
     letter-spacing: .05em; }
@@ -71,8 +71,8 @@ header {
     font-family: "etica-display",sans-serif;
     display: block;
     font-size: .225em;
-    margin-top: -35px;
-    margin-left: -6px;
+    margin-top: -52px;
+    margin-left: -4px;
     font-weight: 200;
     letter-spacing: .47em; }
 
@@ -95,14 +95,12 @@ header {
       color: #fffefa;
       background-color: darkgray;
       display: block;
-      padding: 10px 15px 5px 15px; }
+      padding: 10px 15px; }
     .demo_nav li a:hover, .demo_nav li .nav_active {
       background-color: lightgray;
       color: #686869;
       text-decoration: none; }
 
-.color_list h2 {
-  margin-top: 200px; }
 .color_list ul {
   list-style: none;
   font-size: 1.25em; }
@@ -203,3 +201,15 @@ footer {
 
 footer, .push {
   height: 230px; }
+
+.image_map img {
+  margin-top: 15px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 1000px; }
+.image_map map {
+  background-color: red; }
+  .image_map map .area {
+    display: inline;
+    background-color: green; }

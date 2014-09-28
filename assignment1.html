@@ -20,8 +20,7 @@
 <div id="wrapper">
     <header>
         <a href="index.html">
-            <span class="first_name">Jason</span>
-            <span class="last_name">Redd</span>
+            <span>Jason Redd</span>
             <span class="tag_line">creative problem solver</span>
         </a>
     </header>
@@ -67,7 +66,7 @@
                             </table>
                         </div>
                     </div><!--End Table Group-->
-                    <div class="row"><!--Form Group-->
+                    <div class="row"><!--Row-->
                         <div class="col-lg-4"><!--Grocery list Group-->
                             <aside id="grocery_aside">
                                 <h2>Grocery List</h2>
@@ -89,59 +88,63 @@
                                 </form>
                             </aside>
                         </div><!--End Grocery list Group-->
-                        <section id="join_email_list" class="col-lg-8">
-                            <h2>Sign up for Emailer</h2>
-                            <form id="email_subscription_form" role="form" class="form-horizontal">
-                                <div class="form-group col-lg-12">
-                                    <label for="name">Name *</label>
-                                    <input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
-                                </div>
-                                <div class="form-group col-lg-12">
-                                    <label for="user_email">Email address *</label>
-                                    <input type="email" class="form-control" id="user_email" name="user_email" placeholder="EnterEmail" required>
-                                </div>
-                                <div class="form-group col-lg-4">
-                                    <label for="phone_number">Phone Number *</label>
-                                    <input type="tel" class="form-control" id="phone_number" name="phone_number" placeholder="Enter phone number" required>
-                                </div>
-                                <div class="form-group col-lg-4">
-                                    <label for="date_of_birthday">Date of Birth *</label>
-                                    <input type="date" class="form-control" id="date_of_birthday" name="date_of_birthday" placeholder="Enter date of birth" required>
-                                </div>
-                                <div class="form-group col-lg-4">
-                                    <label for="age">Age *</label>
-                                    <input type="number" min="1" max="100" class="form-control" id="age" name="age" placeholder="Enter age" required="">
-                                </div>
-                                <div class="form-group checkbox col-lg-12">
-                                    <label>
-                                        <input type="checkbox" name="sex" value="Male">Male
-                                    </label>
-                                    <label>
-                                        <input type="checkbox" name="sex" value="Female">Female
-                                    </label>
-                                </div>
-                                <div class="form-group checkbox col-lg-12">
-                                    <label>
-                                        <input type="checkbox" id="update"  name="update"> Do you wish to receive updates?
-                                    </label>
-                                </div>
+                        <div class="col-lg-8">
+                            <section id="join_email_list" class="col-lg-12">
+                                <form id="email_subscription_form" role="form" class="form-horizontal">
+                                    <h2>Sign up for Emailer</h2>
+                                    <div class="form-group col-lg-12">
+                                        <label for="name">Name *</label>
+                                        <input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
+                                    </div>
+                                    <div class="form-group col-lg-12">
+                                        <label for="user_email">Email address *</label>
+                                        <input type="email" class="form-control" id="user_email" name="user_email" placeholder="EnterEmail" required>
+                                    </div>
+                                    <div class="form-group col-lg-4">
+                                        <label for="phone_number">Phone Number *</label>
+                                        <input type="tel" class="form-control" id="phone_number" name="phone_number" placeholder="Enter phone number" required>
+                                    </div>
+                                    <div class="form-group col-lg-4">
+                                        <label for="date_of_birthday">Date of Birth *</label>
+                                        <input type="date" class="form-control" id="date_of_birthday" name="date_of_birthday" placeholder="Enter date of birth" required>
+                                    </div>
+                                    <div class="form-group col-lg-4">
+                                        <label for="age">Age *</label>
+                                        <input type="number" min="1" max="100" class="form-control" id="age" name="age" placeholder="Enter age" required="">
+                                    </div>
+                                    <div class="form-group radio col-lg-12">
+                                        <label>
+                                            <input type="radio" name="sex" value="Male">Male
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="sex" value="Female">Female
+                                        </label>
+                                    </div>
+                                    <div class="form-group checkbox col-lg-12">
+                                        <label>
+                                            <input type="checkbox" id="update"  name="update"> Do you wish to receive updates?
+                                        </label>
+                                    </div>
 
-                                <div class="form-group col-sm-12 text-center">
-                                    <button id="emailer_submit" class="btn btn-success btn-lg">Subscribe</button>
-                                    <button type="reset" class="btn btn-warning btn-lg">Reset</button>
-                                </div>
-                                <!--<button type="reset" class="btn btn-default">Reset</button>-->
-                            </form>
-                        </section>
-                    </div><!--End Form Group-->
-                    <!--<div class="row">-->
-                        <!--<div class="col-lg-12">-->
-                            <!--<form oninput="x.value=parseInt(a.value)+parseInt(b.value)">0 <input type="range" id="a" value="50">100 +-->
-                                <!--<input type="number" id="b" value="50">=-->
-                                <!--<output name="x" for="a b"></output>-->
-                            <!--</form>-->
-                        <!--</div>-->
-                    <!--</div>-->
+                                    <div class="form-group col-sm-12 text-center">
+                                        <button id="emailer_submit" class="btn btn-success btn-lg">Subscribe</button>
+                                        <button type="reset" class="btn btn-warning btn-lg">Reset</button>
+                                    </div>
+                                    <!--<button type="reset" class="btn btn-default">Reset</button>-->
+                                </form>
+                            </section>
+                        </div>
+                    </div><!--End Row-->
+                    <div class="row"><!--Image Map Group-->
+                        <div class="col-lg-12 image_map">
+                            <img src="images/image_map.jpg" alt="about Jason Redd" usemap="#about_map">
+                            <map name="about_map">
+                                <area shape="circle" title="Design" class="area" coords="163,340,140" alt="Design" href="http://www.creativeredd.com/portfolio/design/">
+                                <area shape="circle" title="About Jason Redd" coords="503,165,140" alt="ABout" href="http://www.creativeredd.com/about/">
+                                <area shape="circle" title="Development" coords="833,340,140" alt="Development" href="http://www.creativeredd.com/portfolio/development/">
+                            </map>
+                        </div>
+                    </div><!--End Image Map Group-->
                 </div><!--End of content body-->
             </div>
         </div>

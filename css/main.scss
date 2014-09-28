@@ -19,7 +19,8 @@ $place_holder: rgba(85, 85, 85, 0.75);
     font-size: 1.5em;
   }
   p, tbody tr{
-    font-family: "adobe-garamond-pro",sans-serif;
+//    font-family: "adobe-garamond-pro",sans-serif;
+    font-family: "etica-display",sans-serif;
     font-weight: 100;
     font-size: 1.15em;
     letter-spacing: .05em;
@@ -96,13 +97,11 @@ header {
     text-decoration: none;
   }
   .tag_line {
-//    font-family: "adobe-garamond-pro",sans-serif;
     font-family: "etica-display",sans-serif;
     display: block;
-//    font-family: "estilo-pro",sans-serif;
     font-size: .225em;
-    margin-top: -35px;
-    margin-left: -6px;
+    margin-top: -52px;
+    margin-left: -4px;
     font-weight: 200;
     letter-spacing: .47em;
   }
@@ -129,7 +128,7 @@ header {
       color: $white;
       background-color: $mid_grey;
       display: block;
-      padding: 10px 15px 5px 15px;
+      padding: 10px 15px;
     }
     a:hover, .nav_active {
       background-color: $light_grey;
@@ -141,7 +140,7 @@ header {
 
 .color_list {
   h2 {
-    margin-top: 200px;
+//    margin-top: 100px;
   }
   ul {
     list-style: none;
@@ -290,4 +289,21 @@ footer {
 
 footer, .push {
   height: 230px;
+}
+
+.image_map {
+  img {
+    margin-top: 15px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1000px;
+  }
+  map {
+    background-color: red;
+    .area{
+      display: inline;
+      background-color: green;
+    }
+  }
 }
