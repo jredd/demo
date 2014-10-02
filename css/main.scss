@@ -7,6 +7,11 @@ $dark_grey: #686869;
 $red: #B52628;
 $charcoal: #555;
 $place_holder: rgba(85, 85, 85, 0.75);
+//#3972BF", "#00B700", "#B52628", "#DAC40E", "#9333AB", "#EE6D00"
+//$red: #3972BF;
+//$green: #B52628;
+$green: #00B700;
+$yellow: #DAC40E;
 
 * {
   margin: 0;
@@ -17,6 +22,34 @@ $place_holder: rgba(85, 85, 85, 0.75);
     font-family: "etica-display",sans-serif;
     font-weight: 300;
     font-size: 1.5em;
+    .btn {
+      border-radius: 0;
+      color: $white;
+    }
+    .btn_warning {
+      background: $yellow;
+      border: none;
+    }
+    .btn_warning:hover, .btn_warning:focus {
+      background: darken($yellow, 1.5%);
+      color: darken($white, 1.5%);
+    }
+    .btn_warning:active {
+      background: lighten($yellow, 1.5%);
+      color: lighten($white, 1.5%);
+    }
+    .btn_success {
+      background: $green;
+      border: none;
+    }
+    .btn_success:hover, .btn_success:focus {
+      background: darken($green, 1.5%);
+      color: darken($white, 1.5%);
+    }
+    .btn_success:active {
+      background: lighten($green, 1.5%);
+      color: lighten($white, 1.5%);
+    }
   }
   p, tbody tr{
 //    font-family: "adobe-garamond-pro",sans-serif;
@@ -114,28 +147,76 @@ header {
   margin: 0 auto -230px;
 }
 
-//NAV BAR HERE------>
+//--------NAV BAR HERE------
 .demo_nav {
-  display: inline;
-  li {
-    float: left;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    a{
-      font-size: 1em;
-      font-weight: 400;
-      color: $white;
-      background-color: $mid_grey;
-      display: block;
-      padding: 10px 15px;
-    }
-    a:hover, .nav_active {
-      background-color: $light_grey;
-      color: $dark_grey;
-      text-decoration: none;
+
+}
+nav {
+  min-height: 55px;
+  display: block;
+  #main_nav {
+    left: 110px;
+    position: absolute;
+    li {
+      float: left;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      a {
+        font-size: 1em;
+        font-weight: 400;
+        color: $white;
+        background-color: $mid_grey;
+        display: block;
+        padding: 10px 15px;
+      }
+      a:hover, .nav_active {
+        background-color: $light_grey;
+        color: $dark_grey;
+        text-decoration: none;
+      }
     }
   }
+  #nav_icon {
+    background-color: $dark_grey;
+    display: inline;
+    width: 52px;
+    height: 52px;
+    position: fixed;
+    left: -52px;
+    top: 0;
+    z-index: 6;
+    li {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      background-color: $white;
+      width: 40px;
+      height: 5px;
+      margin-left: -35px;
+      margin-top: 9px;
+    }
+  }
+  #nav_icon:hover {
+    background-color: $light_grey;
+    cursor: pointer;
+    li {
+      background-color: $dark_grey;
+    }
+  }
+  #nav_icon:active {
+    background-color: lighten($light_grey, 15%);
+    li {
+      background-color: lighten($dark_grey, 15%);
+    }
+  }
+}
+
+.sticky_nav {
+  position: fixed !important;
+  top: 0;
+  z-index: 5;
 }
 
 .color_list {
@@ -167,21 +248,6 @@ svg {
 
 #user_info_table {
   thead {
-    td:first-child {
-      border-radius: 10px 0 0 0;
-      -webkit-border-radius: 10px 0 0 0;
-      -moz-border-radius: 10px 0 0 0;
-    }
-    td:last-child {
-      border-radius: 0 10px 0 0;
-      -webkit-border-radius: 0 10px 0 0;
-      -moz-border-radius: 0 10px 0 0;
-    }
-    td:only-child{
-      border-radius: 10px 10px 0 0;
-      -webkit-border-radius: 10px 10px 0 0;
-      -moz-border-radius: 10px 10px 0 0;
-    }
     tr{
       background-color: $dark_grey;
       td{
@@ -239,7 +305,6 @@ svg {
     padding: 10px 16px;
     font-size: 18px;
     line-height: 1.33;
-    border-radius: 6px;
     display: inline-block;
   }
   span {
@@ -248,6 +313,7 @@ svg {
   }
 }
 
+//-------FOOTER SECTION--------
 footer {
   //  position: fixed;
   //  bottom: 0;
@@ -291,6 +357,7 @@ footer, .push {
   height: 230px;
 }
 
+//------ IMAGE MAP CSS
 .image_map {
   img {
     margin-top: 15px;

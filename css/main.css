@@ -5,6 +5,27 @@
     font-family: "etica-display",sans-serif;
     font-weight: 300;
     font-size: 1.5em; }
+    * li .btn, * dd span .btn, * input .btn, * body .btn {
+      border-radius: 0;
+      color: #fffefa; }
+    * li .btn_warning, * dd span .btn_warning, * input .btn_warning, * body .btn_warning {
+      background: #dac40e;
+      border: none; }
+    * li .btn_warning:hover, * li .btn_warning:focus, * dd span .btn_warning:hover, * dd span .btn_warning:focus, * input .btn_warning:hover, * input .btn_warning:focus, * body .btn_warning:hover, * body .btn_warning:focus {
+      background: #d3be0e;
+      color: #fffcf2; }
+    * li .btn_warning:active, * dd span .btn_warning:active, * input .btn_warning:active, * body .btn_warning:active {
+      background: #e1ca0e;
+      color: white; }
+    * li .btn_success, * dd span .btn_success, * input .btn_success, * body .btn_success {
+      background: #00b700;
+      border: none; }
+    * li .btn_success:hover, * li .btn_success:focus, * dd span .btn_success:hover, * dd span .btn_success:focus, * input .btn_success:hover, * input .btn_success:focus, * body .btn_success:hover, * body .btn_success:focus {
+      background: #00af00;
+      color: #fffcf2; }
+    * li .btn_success:active, * dd span .btn_success:active, * input .btn_success:active, * body .btn_success:active {
+      background: #00bf00;
+      color: white; }
   * p, * tbody tr {
     font-family: "etica-display",sans-serif;
     font-weight: 100;
@@ -82,24 +103,60 @@ header {
   height: 100%;
   margin: 0 auto -230px; }
 
-.demo_nav {
-  display: inline; }
-  .demo_nav li {
-    float: left;
-    list-style: none;
-    padding: 0;
-    margin: 0; }
-    .demo_nav li a {
-      font-size: 1em;
-      font-weight: 400;
-      color: #fffefa;
-      background-color: darkgray;
-      display: block;
-      padding: 10px 15px; }
-    .demo_nav li a:hover, .demo_nav li .nav_active {
-      background-color: lightgray;
-      color: #686869;
-      text-decoration: none; }
+nav {
+  min-height: 55px;
+  display: block; }
+  nav #main_nav {
+    left: 110px;
+    position: absolute; }
+    nav #main_nav li {
+      float: left;
+      list-style: none;
+      padding: 0;
+      margin: 0; }
+      nav #main_nav li a {
+        font-size: 1em;
+        font-weight: 400;
+        color: #fffefa;
+        background-color: darkgray;
+        display: block;
+        padding: 10px 15px; }
+      nav #main_nav li a:hover, nav #main_nav li .nav_active {
+        background-color: lightgray;
+        color: #686869;
+        text-decoration: none; }
+  nav #nav_icon {
+    background-color: #686869;
+    display: inline;
+    width: 52px;
+    height: 52px;
+    position: fixed;
+    left: -52px;
+    top: 0;
+    z-index: 6; }
+    nav #nav_icon li {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      background-color: #fffefa;
+      width: 40px;
+      height: 5px;
+      margin-left: -35px;
+      margin-top: 9px; }
+  nav #nav_icon:hover {
+    background-color: lightgray;
+    cursor: pointer; }
+    nav #nav_icon:hover li {
+      background-color: #686869; }
+  nav #nav_icon:active {
+    background-color: #f9f9f9; }
+    nav #nav_icon:active li {
+      background-color: #8e8e8f; }
+
+.sticky_nav {
+  position: fixed !important;
+  top: 0;
+  z-index: 5; }
 
 .color_list ul {
   list-style: none;
@@ -116,18 +173,6 @@ svg .pie_inside {
 svg .units {
   font-size: 1.2em; }
 
-#user_info_table thead td:first-child {
-  border-radius: 10px 0 0 0;
-  -webkit-border-radius: 10px 0 0 0;
-  -moz-border-radius: 10px 0 0 0; }
-#user_info_table thead td:last-child {
-  border-radius: 0 10px 0 0;
-  -webkit-border-radius: 0 10px 0 0;
-  -moz-border-radius: 0 10px 0 0; }
-#user_info_table thead td:only-child {
-  border-radius: 10px 10px 0 0;
-  -webkit-border-radius: 10px 10px 0 0;
-  -moz-border-radius: 10px 10px 0 0; }
 #user_info_table thead tr {
   background-color: #686869; }
   #user_info_table thead tr td {
@@ -167,7 +212,6 @@ svg .units {
   padding: 10px 16px;
   font-size: 18px;
   line-height: 1.33;
-  border-radius: 6px;
   display: inline-block; }
 #grocery_aside span {
   font-size: 1.75em;
