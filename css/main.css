@@ -19,9 +19,9 @@
       color: white; }
     * li .btn_success, * dd span .btn_success, * input .btn_success, * body .btn_success {
       background: #58a967;
-      border-color: #55a564; }
+      border-color: #54a463; }
     * li .btn_success:hover, * li .btn_success:focus, * dd span .btn_success:hover, * dd span .btn_success:focus, * input .btn_success:hover, * input .btn_success:focus, * body .btn_success:hover, * body .btn_success:focus {
-      background: #55a564;
+      background: #54a463;
       color: #fff9e1;
       border-color: #58a967; }
     * li .btn_success:active, * dd span .btn_success:active, * input .btn_success:active, * body .btn_success:active {
