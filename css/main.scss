@@ -1,17 +1,20 @@
 $blue: #7d8dae;
 $light_blue: #ADB8CF;
 $white: #FfFeFa;
+$dark_white: darken($white, 5%);
+$light_white: lighten($white, 1.5%);
 $mid_grey: #A9A9A9;
 $light_grey: #D3D3D3;
 $dark_grey: #686869;
 $red: #B52628;
 $charcoal: #555;
 $place_holder: rgba(85, 85, 85, 0.75);
-//#3972BF", "#00B700", "#B52628", "#DAC40E", "#9333AB", "#EE6D00"
-//$red: #3972BF;
-//$green: #B52628;
-$green: #00B700;
-$yellow: #DAC40E;
+$yellow: #cace50;
+$dark_yellow: darken($yellow, 5%);
+$light_yellow: lighten($yellow, 1.5%);
+$green: #58a967;
+$dark_green: darken($green, 1.5%);
+$light_green: lighten($green, 1.5%);
 
 * {
   margin: 0;
@@ -27,28 +30,33 @@ $yellow: #DAC40E;
       color: $white;
     }
     .btn_warning {
+//      background: $yellow;
       background: $yellow;
-      border: none;
+//      border: none;
+//      border:
+      border-color: $dark_yellow;
     }
     .btn_warning:hover, .btn_warning:focus {
-      background: darken($yellow, 1.5%);
-      color: darken($white, 1.5%);
+      background: $dark_yellow;
+      color: $dark_white;
     }
     .btn_warning:active {
-      background: lighten($yellow, 1.5%);
-      color: lighten($white, 1.5%);
+      background: $light_yellow;
+      color: $light_white;
     }
     .btn_success {
       background: $green;
-      border: none;
+//      border: none;
+      border-color: $dark_green;
     }
     .btn_success:hover, .btn_success:focus {
-      background: darken($green, 1.5%);
-      color: darken($white, 1.5%);
+      background: $dark_green;
+      color: $dark_white;
+      border-color: $green;
     }
     .btn_success:active {
-      background: lighten($green, 1.5%);
-      color: lighten($white, 1.5%);
+      background: $light_green;
+      color: $light_white;
     }
   }
   p, tbody tr{
