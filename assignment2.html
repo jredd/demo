@@ -36,24 +36,50 @@
             <li></li>
         </ul>
         <ul id="main_nav">
-            <li><a href="index.html" class="nav_active">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="assignment1.html">Assignment 1</a></li>
-            <li><a href="assignment2.html">Assignment 2</a></li>
+            <li><a href="assignment2.html" class="nav_active">Assignment 2</a></li>
         </ul>
     </nav>
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
                 <div class="content"><!--Content Body Group-->
-                    <h1>Welcome</h1>
-                    <p>
-                        Thanks for visiting. This site is for displaying my homework assignments from class as well as a place for me to show off a bit.
-                        This site was also developed on chrome and hasn't been optimized for other browsers as of yet. For best viewing experience please use
-                        chrome.
-                        <br />
-                        <br />
-                        Please enjoy.
-                    </p>
+                    <div class="row"><!----Location Group-->
+                        <div class="col-lg-6">
+                            <p id="demo">Click the button to get your position:</p>
+
+                            <button class="btn btn_success btn-lg" onclick="getLocation()">Let us creep on you!</button>
+                        </div>
+                        <div class="col-lg-6">
+                            <div id="mapholder"></div>
+                        </div>
+                    </div><!----End Location Group-->
+                    <div class="row"><!--Table Group-->
+                        <div class="col-lg-12">
+                            <table id="user_info_table" class="table">
+                                <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Color</td>
+                                    <td>Food</td>
+                                    <td>Car</td>
+                                </tr>
+                                </thead>
+                                <tfoot>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                </tfoot>
+                                <tbody id="table_body"></tbody>
+                            </table>
+                        </div>
+                    </div><!--End Table Group-->
+
+
                 </div><!--End of content body-->
             </div>
         </div>
@@ -68,40 +94,40 @@
                     <div class="col-lg-3">
                         <dl>
                             <dt>Web Frame works</dt>
-                                <dd><a href="http://getbootstrap.com/">Bootstrap 3</a></dd>
-                                <dd><a href="http://foundation.zurb.com/">Foundation</a></dd>
-                                <dd><a href="https://www.djangoproject.com/">Django</a></dd>
-                                <dd><a href="http://emberjs.com/">Ember</a></dd>
-                                <dd><a href="hhttps://angularjs.org/">Angular</a></dd>
+                            <dd><a href="http://getbootstrap.com/">Bootstrap 3</a></dd>
+                            <dd><a href="http://foundation.zurb.com/">Foundation</a></dd>
+                            <dd><a href="https://www.djangoproject.com/">Django</a></dd>
+                            <dd><a href="http://emberjs.com/">Ember</a></dd>
+                            <dd><a href="hhttps://angularjs.org/">Angular</a></dd>
 
                         </dl>
                     </div>
                     <div class="col-lg-3">
                         <dl>
                             <dt>JavaScript Libraries</dt>
-                                <dd><a href="http://d3js.org/">D3</a></dd>
-                                <dd><a href="http://jquery.com/">jQuery</a></dd>
-                                <dd><a href="http://jqueryui.com/">jQuery UI</a></dd>
+                            <dd><a href="http://d3js.org/">D3</a></dd>
+                            <dd><a href="http://jquery.com/">jQuery</a></dd>
+                            <dd><a href="http://jqueryui.com/">jQuery UI</a></dd>
                         </dl>
                     </div>
                     <div class="col-lg-3">
                         <dl>
                             <dt>Databases</dt>
-                                <dd><a href="http://www.mysql.com/">MySQL</a></dd>
-                                <dd><a href="http://www.postgresql.org/">PostgreSQL</a></dd>
-                                <dd><a href="http://couchdb.apache.org/">CouchDB</a></dd>
-                                <dd><a href="http://www.elasticsearch.org/">elasticsearch</a></dd>
+                            <dd><a href="http://www.mysql.com/">MySQL</a></dd>
+                            <dd><a href="http://www.postgresql.org/">PostgreSQL</a></dd>
+                            <dd><a href="http://couchdb.apache.org/">CouchDB</a></dd>
+                            <dd><a href="http://www.elasticsearch.org/">elasticsearch</a></dd>
                         </dl>
                     </div>
                     <div class="col-lg-3">
                         <dl>
                             <dt>Tools</dt>
-                                <dd><a href="http://www.jetbrains.com/pycharm/">PyCharm</a></dd>
-                                <dd><a href="http://www.jetbrains.com/webstorm/">WebStrom</a></dd>
-                                <dd><a href="http://www.sublimetext.com/">Sublime Text</a></dd>
-                                <dd><a href="http://www.jsoneditoronline.org/">JSON Editor Online</a></dd>
-                                <dd><a href="http://jsfiddle.net/">JSFIDDLE</a></dd>
-                                <dd><a href="http://typekit.com//">Typekit</a></dd>
+                            <dd><a href="http://www.jetbrains.com/pycharm/">PyCharm</a></dd>
+                            <dd><a href="http://www.jetbrains.com/webstorm/">WebStrom</a></dd>
+                            <dd><a href="http://www.sublimetext.com/">Sublime Text</a></dd>
+                            <dd><a href="http://www.jsoneditoronline.org/">JSON Editor Online</a></dd>
+                            <dd><a href="http://jsfiddle.net/">JSFIDDLE</a></dd>
+                            <dd><a href="http://typekit.com//">Typekit</a></dd>
                         </dl>
                     </div>
                 </div>
@@ -117,9 +143,10 @@
     </div>
 </footer>
 
-<!--<script type="text/javascript" src="js/libs/jquery-1.11.1.min.js"></script>-->
+<script type="text/javascript" src="js/libs/jquery-1.11.1.min.js"></script>
 <!--<script type="text/javascript" src="js/libs/bootstrap.js"></script>-->
 <!--<script type="text/javascript" src="js/libs/d3.js"></script>-->
-<!--<script type="text/javascript" src="js/main.js"></script>-->
+<script type="text/javascript" src="js/sticky_nav.js"></script>
+<script type="text/javascript" src="js/assignment2.js"></script>
 </body>
 </html>

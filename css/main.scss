@@ -1,13 +1,14 @@
+// Setup main colors to use.
 $blue: #7d8dae;
-$light_blue: #ADB8CF;
+$light_blue: lighten(#7d8dae, 18%);
 $white: #FfFeFa;
 $dark_white: darken($white, 5%);
 $light_white: lighten($white, 1.5%);
-$mid_grey: #A9A9A9;
-$light_grey: #D3D3D3;
-$dark_grey: #686869;
-$red: #B52628;
+$grey: #A9A9A9;
+$dark_grey: darken(#A9A9A9, 25%);
+$light_grey: lighten(#A9A9A9, 25%);
 $charcoal: #555;
+$red: #B52628;
 $place_holder: rgba(85, 85, 85, 0.75);
 $yellow: #cace50;
 $dark_yellow: darken($yellow, 5%);
@@ -20,8 +21,6 @@ $light_green: lighten($green, 1.5%);
   margin: 0;
   font-style: normal;
   li, dd span, input, body{
-//    font-family: "estilo-pro",sans-serif;
-//    font-family: "adobe-garamond-pro",sans-serif;
     font-family: "etica-display",sans-serif;
     font-weight: 300;
     font-size: 1.5em;
@@ -30,10 +29,7 @@ $light_green: lighten($green, 1.5%);
       color: $white;
     }
     .btn_warning {
-//      background: $yellow;
       background: $yellow;
-//      border: none;
-//      border:
       border-color: $dark_yellow;
     }
     .btn_warning:hover, .btn_warning:focus {
@@ -46,7 +42,6 @@ $light_green: lighten($green, 1.5%);
     }
     .btn_success {
       background: $green;
-//      border: none;
       border-color: $dark_green;
     }
     .btn_success:hover, .btn_success:focus {
@@ -60,7 +55,6 @@ $light_green: lighten($green, 1.5%);
     }
   }
   p, tbody tr{
-//    font-family: "adobe-garamond-pro",sans-serif;
     font-family: "etica-display",sans-serif;
     font-weight: 100;
     font-size: 1.15em;
@@ -103,6 +97,20 @@ $light_green: lighten($green, 1.5%);
   }
 }
 
+html, body {
+  height: 100%;
+  background-color: $blue;
+  color: $white;
+}
+
+//------------MAIN BODY-------------
+#wrapper {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -230px;
+}
+
 input::-webkit-input-placeholder {
   color: $place_holder !important;
 }
@@ -116,12 +124,17 @@ input:-ms-input-placeholder {
   color: $place_holder !important;
 }
 
-html, body {
-  height: 100%;
-  background-color: $blue;
-  color: $white;
+.input_error{
+  color: $red;
+  font-size: 1.1em;
+  letter-spacing: .04em;
 }
 
+.margin-top {
+  margin-top: 25px;
+}
+
+//------------HEADER SECTION------------
 header {
   height: 150px;
   text-align: center;
@@ -147,18 +160,11 @@ header {
     letter-spacing: .47em;
   }
 }
-
-#wrapper {
-  min-height: 100%;
-  height: auto !important;
-  height: 100%;
-  margin: 0 auto -230px;
+a:active, a:focus {
+  background-color: green;
+  background: green;
 }
-
-//--------NAV BAR HERE------
-.demo_nav {
-
-}
+//-------------NAV BAR HERE------------
 nav {
   min-height: 55px;
   display: block;
@@ -170,19 +176,19 @@ nav {
       list-style: none;
       padding: 0;
       margin: 0;
-
-      a {
+      a, a:active {
         font-size: 1em;
         font-weight: 400;
         color: $white;
-        background-color: $mid_grey;
+        background-color: $grey;
         display: block;
         padding: 10px 15px;
+        text-decoration: none;
       }
+
       a:hover, .nav_active {
         background-color: $light_grey;
         color: $dark_grey;
-        text-decoration: none;
       }
     }
   }
@@ -227,10 +233,17 @@ nav {
   z-index: 5;
 }
 
-.color_list {
-  h2 {
-//    margin-top: 100px;
+//----------PIE GRAPH/SECTION------------
+svg {
+  .pie_inside {
+    font-size: 5em;
   }
+  .units {
+    font-size: 1.2em;
+  }
+}
+
+.color_list {
   ul {
     list-style: none;
     font-size: 1.25em;
@@ -244,16 +257,8 @@ nav {
     }
   }
 }
-// Pie graph css
-svg {
-  .pie_inside {
-    font-size: 5em;
-  }
-  .units {
-    font-size: 1.2em;
-  }
-}
 
+//----------------TABLE--------------
 #user_info_table {
   thead {
     tr{
@@ -264,17 +269,17 @@ svg {
         font-weight: 600;
       }
       td:hover {
-        background-color: $mid_grey;
+        background-color: $grey;
       }
     }
   }
   tbody {
     tr:nth-child(odd) {
       background: $white;
-      color: $mid_grey;
+      color: $grey;
     }
     tr:nth-child(even) {
-      background: $mid_grey;
+      background: $grey;
       color: $white;
     }
     tr:hover {
@@ -290,6 +295,7 @@ svg {
   }
 }
 
+//--------------FORMS-------------
 #join_email_list {
   background-color: $white;
   color: $dark_grey;
@@ -297,14 +303,6 @@ svg {
     width: 30%;
     margin-top: 10px;
   }
-}
-
-
-
-.error{
-  color: $red;
-  font-size: 1.1em;
-  letter-spacing: .04em;
 }
 
 #grocery_aside {
@@ -321,18 +319,36 @@ svg {
   }
 }
 
-//-------FOOTER SECTION--------
+//--------------IMAGE MAP-------------
+.image_map {
+  img {
+    margin-top: 15px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1000px;
+  }
+  map {
+    background-color: red;
+    .area{
+      display: inline;
+      background-color: green;
+    }
+  }
+}
+
+//------------FOOTER SECTION-------------
+.push {
+  margin-top: 15px;
+}
+
 footer {
-  //  position: fixed;
-  //  bottom: 0;
-  //  width: 100%;
   -webkit-box-shadow: inset 0px 30px 90px -20px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: inset 0px 30px 90px -20px rgba(0, 0, 0, 0.3);
   box-shadow: inset 0px 30px 90px -20px rgba(0, 0, 0, 0.3);
   background-color: $dark_grey;
   dt {
     font-size: 1.5em;
-
   }
   dd {
     text-indent: 25px;
@@ -352,33 +368,6 @@ footer {
   }
 }
 
-.push {
-  margin-top: 15px;
-}
-
-.margin-top {
-  margin-top: 25px;
-}
-
-
 footer, .push {
   height: 230px;
-}
-
-//------ IMAGE MAP CSS
-.image_map {
-  img {
-    margin-top: 15px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 1000px;
-  }
-  map {
-    background-color: red;
-    .area{
-      display: inline;
-      background-color: green;
-    }
-  }
 }
