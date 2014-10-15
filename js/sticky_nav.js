@@ -8,7 +8,7 @@ var nav_icon = $('#nav_icon');
 $( document ).ready(function() {
     // If the page is loaded below the nav just animate in the nav_ico and place the nav
     if ($(window).scrollTop() > header_height) {
-        console.log($(window).scrollTop(), '---', header_height);
+//        console.log($(window).scrollTop(), '---', header_height);
         nav_icon.filter(':not(:animated)').stop(true, false).delay(100).animate({
             left: 0
         }, 300, function() {
