@@ -240,11 +240,8 @@ $("#add_to_json_list").click(function(e){
     $(this).attr("disabled","disabled");
     body.append(html_string);
 
-//    hover_row = $(this)[0];
-//    var last_child = $(hover_row.lastChild);
-//    last_child.children('.edit_btn').show(300);
-
-    console.log($('.name_field').focus())
+    // set focus onto the name input field
+    $('.name_field').focus();
     save_button_click();
     cancel_edit_btn_click();
 });
@@ -257,7 +254,7 @@ cancel_edit_btn_click = function() {
         var row_id = current_row.attr('id');
         var old_row = row_data[row_id];
 
-        current_row.replaceWith(old_row)
+        current_row.replaceWith(old_row);
         if (current_row.hasClass("new_row")) {
             $("#add_to_json_list").removeAttr('disabled');
         }
@@ -265,3 +262,86 @@ cancel_edit_btn_click = function() {
         add_row_btns();
     });
 };
+//-------- Drag and Drop section
+var drag_src_el = null;
+var swatches = document.querySelectorAll('#color_swatches .swatch');
+
+function handle_drag_start(e) {
+    console.log('drag started');
+
+    drag_src_el = this;
+
+    e.dataTransfer.effectAllowed = 'move';
+    e.dataTransfer.setData('text/html', this.innerHTML);
+}
+
+function handle_drop(e) {
+    // this/e.target is current target element.
+
+    if (e.stopPropagation) {
+        e.stopPropagation(); // Stops some browsers from redirecting.
+    }
+
+    // Don't do anything if dropping the same column we're dragging.
+    if (drag_src_el != this) {
+        // Set the source column's HTML to the HTML of the column we dropped on.
+        drag_src_el.innerHTML = this.innerHTML;
+        this.innerHTML = e.dataTransfer.getData('text/html');
+    }
+    var match_list = ["swatch1", "swatch2", "swatch3", "swatch4", "swatch5", "swatch6"];
+    var show_congrats = true;
+
+    $.each(swatches, function(index, li) {
+        var swatch = $(li).children('span').attr('id');
+
+        if (!(swatch == match_list[index])) {
+            show_congrats = false;
+        }
+    });
+
+//    if (show_congrats){
+//        console.log('YAY YOU DID IT BITCH!!!')
+//
+//        console.log($('.swatch').blur(5000));
+//
+//    }else {
+//        console.log('ya dumb fuck get it right')
+//    }
+    return false;
+}
+
+function handle_drag_end(e) {
+    // this/e.target is the source node.
+
+    [].forEach.call(swatches, function (swatch) {
+        swatch.classList.remove('over');
+    });
+}
+
+function handle_drag_over(e) {
+    if (e.preventDefault) {
+        e.preventDefault(); // Necessary. Allows us to drop.
+    }
+
+    e.dataTransfer.dropEffect = 'move';  // See the section on the DataTransfer object.
+
+    return false;
+}
+
+function handle_drag_enter(e) {
+    // this / e.target is the current hover target.
+    this.classList.add('over');
+}
+
+function handle_drag_leave(e) {
+    this.classList.remove('over');  // this / e.target is previous target element.
+}
+
+[].forEach.call(swatches, function(swatch) {
+    swatch.addEventListener("dragstart", handle_drag_start, false);
+    swatch.addEventListener("dragover", handle_drag_over, false);
+    swatch.addEventListener("dragenter", handle_drag_enter, false);
+    swatch.addEventListener("dragleave", handle_drag_leave, false);
+    swatch.addEventListener("drop", handle_drop, false);;
+    swatch.addEventListener("dragend", handle_drag_end, false);;
+});

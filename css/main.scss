@@ -352,6 +352,52 @@ svg {
   }
 }
 
+
+//--------------COLOR SWATCH---------
+
+#color_swatches{
+  list-style: none;
+  padding: 0;
+//  display: inline-block;
+  .swatch{
+    float: left;
+//    display: block;
+//    height: 200px;
+    cursor: ew-resize;
+//    background-color: $green;
+  }
+  li {
+    padding: 0;
+  }
+  span {
+    display: block;
+    height: 200px;
+  }
+  #swatch1 {
+    background-color: lighten($green, 15%);
+  }
+  #swatch2 {
+    background-color: lighten($green, 10%);
+  }
+  #swatch3 {
+    background: lighten($green, 5%);
+
+  }
+  #swatch4 {
+    background-color: $green;
+  }
+  #swatch5 {
+    background-color: darken($green, 5%);
+  }
+  #swatch6 {
+    background-color: darken($green, 10%);
+  }
+  .over {
+    border: 2px dashed #000;
+//    opacity: .4%;
+  }
+}
+
 //--------------IMAGE MAP-------------
 .image_map {
   img {

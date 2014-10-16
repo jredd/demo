@@ -243,6 +243,32 @@ svg .units {
   font-size: 1.75em;
   margin-left: -20px; }
 
+#color_swatches {
+  list-style: none;
+  padding: 0; }
+  #color_swatches .swatch {
+    float: left;
+    cursor: ew-resize; }
+  #color_swatches li {
+    padding: 0; }
+  #color_swatches span {
+    display: block;
+    height: 200px; }
+  #color_swatches #swatch1 {
+    background-color: #8ac395; }
+  #color_swatches #swatch2 {
+    background-color: #7aba86; }
+  #color_swatches #swatch3 {
+    background: #69b276; }
+  #color_swatches #swatch4 {
+    background-color: #58a967; }
+  #color_swatches #swatch5 {
+    background-color: #4f995c; }
+  #color_swatches #swatch6 {
+    background-color: #468852; }
+  #color_swatches .over {
+    border: 2px dashed #000; }
+
 .image_map img {
   margin-top: 15px;
   display: block;
