@@ -1,0 +1,18 @@
+// Setup main colors to use.
+$blue: #7d8dae;
+$light_blue: lighten(#7d8dae, 18%);
+$white: #FfFeFa;
+$dark_white: darken($white, 5%);
+$light_white: lighten($white, 1.5%);
+$grey: #A9A9A9;
+$dark_grey: darken(#A9A9A9, 25%);
+$light_grey: lighten(#A9A9A9, 25%);
+$charcoal: #555;
+$red: #B52628;
+$place_holder: rgba(85, 85, 85, 0.75);
+$yellow: #cace50;
+$dark_yellow: darken($yellow, 5%);
+$light_yellow: lighten($yellow, 1.5%);
+$green: #58a967;
+$dark_green: darken($green, 1.75%);
+$light_green: lighten($green, 1.5%);

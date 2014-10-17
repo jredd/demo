@@ -1,0 +1,76 @@
+@import 'color_pallet';
+@import 'table_mixin';
+
+
+//----------PIE GRAPH/SECTION------------
+svg {
+  .pie_inside {
+    font-size: 5em;
+  }
+  .units {
+    font-size: 1.2em;
+  }
+}
+
+.color_list {
+  ul {
+    list-style: none;
+    font-size: 1.25em;
+    li {
+      display:block;
+      padding: 5px;
+    }
+    :hover {
+      color:$light_grey;
+      cursor: pointer;
+    }
+  }
+}
+
+//--------------FORMS-------------
+#join_email_list {
+  background-color: $white;
+  color: $dark_grey;
+  button {
+    width: 30%;
+    margin-top: 10px;
+  }
+}
+
+
+#grocery_aside {
+  .btn_xl {
+    width: 49.35%;
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.33;
+    display: inline-block;
+  }
+  span {
+    font-size: 1.75em;
+    margin-left: -20px;
+  }
+}
+
+//----EXTENDED TABLE----
+#user_info_table{
+  @extend #user_info_table;
+}
+
+//--------------IMAGE MAP-------------
+.image_map {
+  img {
+    margin-top: 15px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1000px;
+  }
+  map {
+    background-color: red;
+    .area{
+      display: inline;
+      background-color: green;
+    }
+  }
+}

@@ -1,0 +1,49 @@
+//----------------TABLE--------------
+#user_info_table {
+  thead {
+    tr{
+      background-color: $dark_grey;
+      td{
+        text-align: center;
+        font-size: 1.5em;
+        font-weight: 600;
+      }
+      td:hover {
+        background-color: $grey;
+      }
+    }
+  }
+  tbody {
+    tr:nth-child(odd) {
+      background: $white;
+      color: $grey;
+    }
+    tr:nth-child(even) {
+      background: $grey;
+      color: $white;
+    }
+    tr:hover {
+      background: $light_grey;
+      color: $dark_grey;
+      cursor:  pointer;
+    }
+    tr {
+
+    }
+    td {
+      line-height: 25px;
+      position: relative;
+      input {
+        width: 180px;
+        //        height: 30px;
+        padding: 0;
+      }
+    }
+  }
+  tfoot{
+    background-color: $dark_grey;
+    tr{
+      height: 3px;
+    }
+  }
+}
