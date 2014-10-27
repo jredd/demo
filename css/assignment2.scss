@@ -64,3 +64,28 @@
     display: block;
   }
 }
+
+//.keying {
+//  display: block;
+//  color: $charcoal;
+//  width: 800px;
+//}
+//
+//.cubes {
+//  li {
+//    display: block;
+//    width: 100px;
+//    height: 100px;
+//    float: left;
+//    background-color: $light_blue;
+//    margin: 15px;
+//  }
+//}
+
+.animated_cube {
+  position: absolute;
+  display: block;
+  width: 250px;
+  height: 250px;
+  background-color: $light_blue;
+}

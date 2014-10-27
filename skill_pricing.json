@@ -1,0 +1,44 @@
+[
+  {
+    "item_name": "Django",
+    "icon_url": "images/cart_icons/django_icon.png",
+    "description": "",
+    "price": "$70"
+  },
+  {
+    "item_name": "D3",
+    "icon_url": "images/cart_icons/d3_icon.png",
+    "description": "",
+    "price": "$65"
+  },
+  {
+    "item_name": "Database",
+    "icon_url": "images/cart_icons/db_icon.png",
+    "description": "",
+    "price": "$65"
+  },
+  {
+    "item_name": "HTML CSS",
+    "icon_url": "images/cart_icons/html_css_icon.png",
+    "description": "",
+    "price": "$55"
+  },
+  {
+    "item_name": "JavaScript",
+    "icon_url": "images/cart_icons/js_icon.png",
+    "description": "",
+    "price": "$75"
+  },
+  {
+    "item_name": "Python",
+    "icon_url": "images/cart_icons/python_icon.png",
+    "description": "",
+    "price": "$80"
+  },
+  {
+    "item_name": "Full Stack",
+    "icon_url": "images/cart_icons/full_stack_icon.png",
+    "description": "",
+    "price": "$90"
+  }
+]

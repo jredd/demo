@@ -43,12 +43,8 @@ function showError(error) {
 
 trash_btn_click = function() {
     $('.trash_row_btn').click(function() {
-//        console.log('trash clicked');
         var current_row = $(this).closest('tr');
-//        console.log(current_row)
-//        if (confirm("Will permanently remove this user.")) {
-//            console.log("GOT THE OK TO KILL IT")
-//        }
+
         $(current_row).remove();
         save_local();
     });
@@ -89,14 +85,12 @@ add_row_btns = function(){
         var last_child = $(hover_row.lastChild);
         last_child.children('.edit_btn').show(300);
         last_child.children('.trash_row_btn').show(300);
-//        divdbl.dblclick
         $(hover_row).dblclick(function(e) {
-//            $('.trash_row_btn').click(this)
-            console.log(last_child.children(".trash_row_btn").click())
-//            console.log($(this).children('.trash_row_btn').click())
-            //.children('.trash_row_btn').click())//.childElement('.trash_row_btn'))
+            last_child.children(".trash_row_btn").click()
             $(hover_row).children('.trash_row_btn').click()
         });
+
+
 
     });
     table_row.mouseleave(function(e) {
@@ -105,7 +99,13 @@ add_row_btns = function(){
         last_child.children('.trash_row_btn').hide(300);
     });
 
+    //table_row.keypress(function(event) {
+    //    console.log('keypresswd');
+    //});
+
     trash_btn_click();
+
+
 
     edit_btn.click(function(e) {
         var column_count = $("table > tbody").find("> tr:first > td").length;
@@ -135,6 +135,7 @@ add_row_btns = function(){
         cancel_edit_btn_click();
     });
 };
+
 
 save_button_click = function(){
     $(".save_btn").click(function(e) {
@@ -244,6 +245,11 @@ $("#add_to_json_list").click(function(e){
     $('.name_field').focus();
     save_button_click();
     cancel_edit_btn_click();
+
+    $('.name_field').change(function(e) {
+        console.log('changed')
+        alert('Changed fields')
+    })
 });
 
 cancel_edit_btn_click = function() {
@@ -299,14 +305,6 @@ function handle_drop(e) {
         }
     });
 
-//    if (show_congrats){
-//        console.log('YAY YOU DID IT BITCH!!!')
-//
-//        console.log($('.swatch').blur(5000));
-//
-//    }else {
-//        console.log('ya dumb fuck get it right')
-//    }
     return false;
 }
 
@@ -345,3 +343,69 @@ function handle_drag_leave(e) {
     swatch.addEventListener("drop", handle_drop, false);;
     swatch.addEventListener("dragend", handle_drag_end, false);;
 });
+
+//var keying = $('.keying')
+//
+//keying.keyup(function (event) {
+//    var chars = $(this).val();
+//    console.log(chars.length)
+//    $('.char_count').html(chars.length)
+//});
+//
+//keying.keydown(function(e){
+//    if(e.keyCode == 8){
+//        var chars = $(this).val();
+//        console.log(chars.length)
+//        $('.char_count').html(chars.length)
+//    }
+//});
+//
+//keying.keypress(function (e) {
+//    console.log('MUST START FADING')
+//});
+//
+//keying.blur(function (e) {
+//    var value = $(this).val()
+//    $(this).val('')
+//    $('.char_count').html(0)
+//});
+
+
+
+$(document).keypress(function(e) {
+    e.stopPropagation()
+    var cube = $('.animated_cube');
+    //cube.animate()
+    cube.animate({
+        left: '200px'
+    }, 500, function() {
+        cube.animate({
+            left: '300px'
+        }, 500, function() {
+            cube.animate({
+                left: '400px'
+            }, 500)
+        })
+    });
+
+});
+$(document).keypress(function(e) {
+    e.stopPropagation()
+    //console.log('pressed that shit')
+    // chain three fading events
+    var cube = $('.animated_cube');
+    cube.fadeTo('fast',.80, function (){
+        cube.fadeTo('fast',.60, function() {
+            cube.fadeTo('fast',.40)
+        })
+    });
+    //cube.fadeTo('fast',.60);
+    //cube.fadeTo('fast',.40);
+});
+
+$(document).keyup(function(e) {
+    $('.animated_cube').stop().fadeTo('slow', 1)
+    $('.animated_cube').stop()
+})
+
+

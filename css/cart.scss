@@ -1,0 +1,51 @@
+@import 'color_pallet';
+
+
+.simpleCart_shelfItem {
+  display: inline-block;
+
+}
+
+
+.cart_item {
+//  margin-left: 15px;
+//  margin-right: 15px;
+  padding: 15px;
+  background: $white;
+  color: $charcoal;
+  h3 {
+    margin-top: 0;
+  }
+  img {
+//    align-content: cent;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  select {
+    margin-bottom: 15px;
+  }
+}
+
+.cart_item:hover {
+  border-style: solid;
+  border-width: 1px;
+}
+
+.cart_hud {
+  background-color:  $white;
+  width: 200px;
+  display: block;
+  right: 125px;
+//  height: 85px;
+  position: fixed;
+  color: $charcoal;
+  padding: 15px;
+}
+
+.itemRow {
+  background-color: $white;
+  color: $charcoal;
+  padding: 15px;
+  margin-top: 15px;
+}
