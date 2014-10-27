@@ -1,0 +1,72 @@
+#user_info_table thead tr {
+  background-color: dimgray; }
+  #user_info_table thead tr td {
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: 600; }
+  #user_info_table thead tr td:hover {
+    background-color: darkgray; }
+#user_info_table tbody tr:nth-child(odd) {
+  background: #fffefa;
+  color: darkgray; }
+#user_info_table tbody tr:nth-child(even) {
+  background: darkgray;
+  color: #fffefa; }
+#user_info_table tbody tr:hover {
+  background: #e9e9e9;
+  color: dimgray;
+  cursor: pointer; }
+#user_info_table tbody td {
+  line-height: 25px;
+  position: relative; }
+  #user_info_table tbody td input {
+    width: 180px;
+    padding: 0; }
+#user_info_table tfoot {
+  background-color: dimgray; }
+  #user_info_table tfoot tr {
+    height: 3px; }
+
+#color_swatches {
+  list-style: none;
+  padding: 0; }
+  #color_swatches .swatch {
+    float: left;
+    cursor: ew-resize; }
+  #color_swatches li {
+    padding: 0; }
+  #color_swatches span {
+    display: block;
+    height: 200px; }
+  #color_swatches #swatch1 {
+    background-color: #8ac395; }
+  #color_swatches #swatch2 {
+    background-color: #7aba86; }
+  #color_swatches #swatch3 {
+    background: #69b276; }
+  #color_swatches #swatch4 {
+    background-color: #58a967; }
+  #color_swatches #swatch5 {
+    background-color: #4f995c; }
+  #color_swatches #swatch6 {
+    background-color: #468852; }
+  #color_swatches .over {
+    border: 2px dashed #000; }
+
+#user_info_table .edit_btn, #user_info_table .save_btn {
+  right: 35px;
+  top: 10px;
+  position: absolute;
+  display: block; }
+#user_info_table .trash_row_btn, #user_info_table .cancel_edit_btn {
+  right: 10px;
+  top: 10px;
+  position: absolute;
+  display: block; }
+
+.animated_cube {
+  position: absolute;
+  display: block;
+  width: 250px;
+  height: 250px;
+  background-color: #b6bfd1; }
