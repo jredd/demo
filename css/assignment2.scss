@@ -82,10 +82,18 @@
 //  }
 //}
 
+.cube_holder {
+//  position: inherit;
+  display: block;
+  height: 250px;
+
+}
+
 .animated_cube {
   position: absolute;
-  display: block;
+//  display: block;
   width: 250px;
   height: 250px;
   background-color: $light_blue;
+//  margin-top: 250px;
 }

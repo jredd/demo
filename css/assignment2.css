@@ -64,9 +64,12 @@
   position: absolute;
   display: block; }
 
+.cube_holder {
+  display: block;
+  height: 250px; }
+
 .animated_cube {
   position: absolute;
-  display: block;
   width: 250px;
   height: 250px;
   background-color: #b6bfd1; }

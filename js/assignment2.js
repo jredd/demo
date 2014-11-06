@@ -131,8 +131,10 @@ add_row_btns = function(){
         var edit_row = '<tr id="'+row_id+'">' + td_string + '</tr>';
         $(hover_row).replaceWith(edit_row);
 
+        name_field_check();
         save_button_click();
         cancel_edit_btn_click();
+
     });
 };
 
@@ -245,12 +247,16 @@ $("#add_to_json_list").click(function(e){
     $('.name_field').focus();
     save_button_click();
     cancel_edit_btn_click();
+    name_field_check();
 
+});
+
+name_field_check = function() {
     $('.name_field').change(function(e) {
-        console.log('changed')
+        console.log('changed');
         alert('Changed fields')
     })
-});
+};
 
 cancel_edit_btn_click = function() {
     $('.cancel_edit_btn').click(function() {
