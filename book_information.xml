@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<book_list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="book_information.xsd">
+  <!--BOOK ONE-->
+  <book>
+    <title>Sword Of Shannara</title>
+    <author>
+      <author_name>
+        <first>Terry</first>
+        <last>Brooks</last>
+      </author_name>
+      <date_of_birth>1944-01-01</date_of_birth>
+      <education_level>BA</education_level>
+      <Address>
+        <street>3452 North Winchester</street>
+        <city>Seattle</city>
+        <zip>4354</zip>
+        <country>USA</country>
+      </Address>
+      <published_count>26</published_count>
+    </author>
+    <ISBN>034-531-4255</ISBN>
+    <price currency="dollars">5.98</price>
+    <publication_date>2000-10-06</publication_date>
+    <publisher_information>
+      <publisher>Del Rey</publisher>
+      <address>
+        <street>1745 Broadway</street>
+        <!--Optional:-->
+        <suit>201</suit>
+        <city>New York</city>
+        <zip>10019</zip>
+        <country>USA</country>
+      </address>
+      <circulation_time>P3M5DT50M6S</circulation_time>
+    </publisher_information>
+  </book><!--ENd BOOK ONE-->
+
+  <book><!--BOOK TWO-->
+    <title>Harry Potter And The Half Blood Prince</title>
+    <author>
+      <author_name>
+        <first>Joanne</first>
+        <last>Rowling</last>
+      </author_name>
+      <date_of_birth>1965-08-31</date_of_birth>
+      <education_level>BA</education_level>
+      <Address>
+        <street>19 Hazelbank Terrace</street>
+        <city>Edinburgh</city>
+        <zip>4354</zip>
+        <country>UK</country>
+      </Address>
+      <published_count>13</published_count>
+    </author>
+    <ISBN>074-758-1088</ISBN>
+    <price currency="dollars">7.86</price>
+    <publication_date>2000-10-06</publication_date>
+    <publisher_information>
+      <publisher>Scholastic Paperbacks Reprint Edition</publisher>
+      <address>
+        <street>2270 Springlake Road</street>
+        <!--Optional:-->
+        <suit>600</suit>
+        <city>Farmers Branch</city>
+        <zip>75234</zip>
+        <country>USA</country>
+      </address>
+      <circulation_time>P3M5DT50M6S</circulation_time>
+    </publisher_information>
+  </book><!--END BOOK TWO-->
+
+  <book><!--BOOK THREE-->
+    <title>Clean Code A Handbook Of Agile Software Craftsmanship</title>
+    <author>
+      <author_name>
+        <first>Robert</first>
+        <last>Martin</last>
+      </author_name>
+      <date_of_birth>1952-01-01</date_of_birth>
+      <education_level>MA</education_level>
+      <Address>
+        <street>401 Dont Know</street>
+        <city>Dallas</city>
+        <zip>7403</zip>
+        <country>USA</country>
+      </Address>
+      <published_count>7</published_count>
+    </author>
+    <ISBN>013-235-0882</ISBN>
+    <price currency="dollars">38.43</price>
+    <publication_date>2008-08-11</publication_date>
+    <publisher_information>
+      <publisher>Prentice Hall</publisher>
+      <address>
+        <street>1 Lake Street</street>
+        <city>Upper Saddle River</city>
+        <zip>07458</zip>
+        <country>USA</country>
+      </address>
+      <circulation_time>P3M5DT50M6S</circulation_time>
+    </publisher_information>
+  </book><!--END BOOK THREE-->
+</book_list>

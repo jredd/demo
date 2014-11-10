@@ -1,0 +1,149 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:element name="book_list" type="book_list_type" />
+    <!--<xsd:element name="book">-->
+        <xsd:complexType mixed="true" name="book_type">
+            <xsd:sequence>
+                <xsd:element name="title" type="capital_first_character_per_word"/>
+                <xsd:element name="author" type="author_information"/>
+                <xsd:element name="ISBN">
+                    <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                            <xsd:pattern value="[A-Za-z0-9]{0,3}-[A-Za-z0-9]{0,3}-[A-Za-z0-9]{0,4}"/>
+                        </xsd:restriction>
+                    </xsd:simpleType>
+                </xsd:element>
+                <xsd:element name="price">
+                    <xsd:complexType>
+                        <xsd:simpleContent>
+                            <xsd:extension base="xsd:decimal">
+                                <xsd:attribute name="currency">
+                                    <xsd:simpleType>
+                                        <xsd:restriction base="xsd:string">
+                                            <xsd:enumeration value="dollars" />
+                                            <xsd:enumeration value="pounds" />
+                                            <xsd:enumeration value="euros" />
+                                        </xsd:restriction>
+                                    </xsd:simpleType>
+                                </xsd:attribute>
+                            </xsd:extension>
+                        </xsd:simpleContent>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="publication_date" type="xsd:date"/>
+                <xsd:element name="publisher_information">
+                    <xsd:complexType mixed="true">
+                        <xsd:sequence>
+                            <xsd:element name="publisher" type="capital_first_character_per_word"/>
+                            <xsd:element name="address">
+                                <xsd:complexType>
+                                    <xsd:sequence>
+                                        <xsd:element name="street">
+                                            <xsd:simpleType>
+                                                <xsd:restriction base="xsd:string">
+                                                    <xsd:pattern value="[0-9]+\s([A-Z][a-zA-Z]*\s*)+"/>
+                                                </xsd:restriction>
+                                            </xsd:simpleType>
+                                        </xsd:element>
+                                        <xsd:element name="suit" type="xsd:positiveInteger" minOccurs="0" />
+                                        <xsd:element name="city" type="capital_first_character_per_word" />
+                                        <xsd:element name="zip" type="xsd:positiveInteger"/>
+                                        <xsd:element name="country">
+                                            <xsd:simpleType>
+                                                <xsd:restriction base="xsd:string">
+                                                    <xsd:pattern value="[A-Z]+"/>
+                                                </xsd:restriction>
+                                            </xsd:simpleType>
+                                        </xsd:element>
+                                    </xsd:sequence>
+                                </xsd:complexType>
+                            </xsd:element>
+                            <xsd:element name="circulation_time" type="xsd:duration" />
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    <!--</xsd:element>-->
+
+    <xsd:complexType mixed="true" name="author_information">
+        <xsd:sequence>
+            <xsd:element name="author_name">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="first" type="capital_first_letter" />
+                        <xsd:element name="last" type="capital_first_letter" />
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="date_of_birth">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:date">
+                        <xsd:minInclusive value="1925-01-01"/>
+                        <xsd:maxInclusive value="2000-12-31"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="education_level">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:enumeration value="BA" />
+                        <xsd:enumeration value="BS" />
+                        <xsd:enumeration value="MA" />
+                        <xsd:enumeration value="PHD" />
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="Address">
+                <xsd:complexType mixed="true">
+                    <xsd:sequence>
+                        <xsd:element name="street">
+                            <xsd:simpleType>
+                                <xsd:restriction base="xsd:string">
+                                    <xsd:pattern value="[0-9]+\s([A-Z][a-zA-Z]*\s*)+"/>
+                                </xsd:restriction>
+                            </xsd:simpleType>
+                        </xsd:element>
+                        <xsd:element name="apt_number" type="xsd:int" minOccurs="0"/>
+                        <xsd:element name="city" type="capital_first_character_per_word" />
+                        <xsd:element name="zip" type="xsd:positiveInteger"/>
+                        <xsd:element name="country">
+                            <xsd:simpleType>
+                                <xsd:restriction base="xsd:string">
+                                    <xsd:pattern value="[A-Z]+"/>
+                                </xsd:restriction>
+                            </xsd:simpleType>
+                        </xsd:element>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="published_count">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:positiveInteger">
+                        <xsd:minInclusive value="1"/>
+                        <xsd:maxInclusive value="100"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="co_authors" type="xsd:string" minOccurs="0"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:simpleType name="capital_first_letter">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="[A-Z][a-z]+"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="capital_first_character_per_word">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="([A-Z][a-zA-Z]*\s*)+"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:complexType name="book_list_type">
+        <xsd:sequence>
+            <xsd:element type="book_type" name="book" maxOccurs="unbounded" minOccurs="0"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+</xsd:schema>
