@@ -54,7 +54,8 @@ html ul.tabs li.active, html ul.tabs li.active a:hover {
   font-size: 1.2em;
   color: #555555; }
   .tab_content li {
-    list-style: none; }
+    list-style: none;
+    font-size: 1.2em; }
   .tab_content h2 {
     font-weight: normal;
     padding-bottom: 10px;

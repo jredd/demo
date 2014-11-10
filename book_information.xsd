@@ -2,6 +2,8 @@
     <xsd:element name="book_list" type="book_list_type" />
     <!--<xsd:element name="book">-->
         <xsd:complexType mixed="true" name="book_type">
+            <!--<xsd:attribute name="image" type="xsd:anyURI"/>-->
+            <!--<xsd:attribute type="xsd:string" name="image"/>-->
             <xsd:sequence>
                 <xsd:element name="title" type="capital_first_character_per_word"/>
                 <xsd:element name="author" type="author_information"/>
@@ -62,6 +64,7 @@
                     </xsd:complexType>
                 </xsd:element>
             </xsd:sequence>
+            <xsd:attribute name="image" type="xsd:anyURI"/>
         </xsd:complexType>
     <!--</xsd:element>-->
 

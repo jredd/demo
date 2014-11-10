@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <book_list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="book_information.xsd">
   <!--BOOK ONE-->
-  <book>
+  <book image="images/book_icons/sword_shannara.jpg">
     <title>Sword Of Shannara</title>
     <author>
       <author_name>
@@ -35,7 +35,7 @@
     </publisher_information>
   </book><!--ENd BOOK ONE-->
 
-  <book><!--BOOK TWO-->
+  <book image="images/book_icons/half_blood_prince.jpg"><!--BOOK TWO-->
     <title>Harry Potter And The Half Blood Prince</title>
     <author>
       <author_name>
@@ -69,7 +69,7 @@
     </publisher_information>
   </book><!--END BOOK TWO-->
 
-  <book><!--BOOK THREE-->
+  <book image="images/book_icons/clean_code.jpg"><!--BOOK THREE-->
     <title>Clean Code A Handbook Of Agile Software Craftsmanship</title>
     <author>
       <author_name>
@@ -101,7 +101,7 @@
     </publisher_information>
   </book><!--END BOOK THREE-->
 
-  <book><!--BOOK Four-->
+  <book image="images/book_icons/deathly_hallows.jpg"><!--BOOK Four-->
     <title>Harry Potter And The Deathly Hollows</title>
     <author>
       <author_name>
