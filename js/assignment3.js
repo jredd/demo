@@ -20,14 +20,10 @@ make_tabs_work = function(){
 };
 
 var file_data = $.get('book_information.xml', function(data){
-    var book_list = data.getElementsByTagName('book')
-    var tab_list = ''
+    var book_list = data.getElementsByTagName('book');
     $.each(book_list, function(index, book){
-        var book_xml = $.parseXML(book[0]);
-        var $book = $(book_xml);
-        //console.log($book.find('title').text())
         var tab = '<li><a href="#tab'+(index+1)+'">Book '+(index+1)+'</a></li>';
-        $('.tabs').append(tab)
+        $('.tabs').append(tab);
 
         // setup book content
         var title = $(book.getElementsByTagName('title')[0]).text();
@@ -102,44 +98,200 @@ function loadXMLDoc(dname)
     xhttp.send("");
     return xhttp;
 }
-
+var list_info = '<ul>';
 var x=loadXMLDoc("book_information.xml");
 var xml=x.responseXML;
-path="/book_list/book/price";
+var price_path="/book_list/book/price";
+var author_price_total_path = "/book_list/book/author/author_name | " +
+    "/book_list/book/price";
+var price_less_path="/book_list/book[price<50]/title | " +
+    "/book_list/book[price<50]/publisher_information/publisher |" +
+    "/book_list/book[price<50]/author/author_name";
+var eduaction_path = "/book_list/book/author[education_level='MS']/author_name | " +
+    "/book_list/book/author[education_level='MS']/../title";
+var publish_after_path = "/book_list/book[number(translate(publication_date,'-','')) < 20011231]/title | " +
+    "/book_list/book[number(translate(publication_date,'-','')) < 20011231]/author/author_name |" +
+    "/book_list/book[number(translate(publication_date,'-','')) < 20011231]/publisher_information/publisher";
 
-// code for IE
-if (window.ActiveXObject || xhttp.responseType=="msxml-document")
-{
-    xml.setProperty("SelectionLanguage","XPath");
-    nodes=xml.selectNodes(path);
-    //for (i=0;i<nodes.length;i++)
-    //{
-    //    document.write(nodes[i].childNodes[0].nodeValue);
-    //    document.write("<br>");
-    //}
-    console.log(nodes)
-}
-
-// code for Chrome, Firefox, Opera, etc.
-else if (document.implementation && document.implementation.createDocument)
-{
-    var nodes=xml.evaluate(path, xml, null, XPathResult.ANY_TYPE, null);
-    var result=nodes.iterateNext();
-
-    var price = 0.00;
-    while (result)
+var get_price_info = function(path){
+    if (document.implementation && document.implementation.createDocument)
     {
-        //document.write(result.childNodes[0].nodeValue);
-        //document.write("<br>");
-        price += parseFloat(result.childNodes[0].nodeValue)
-        result=nodes.iterateNext();
+        var nodes=xml.evaluate(path, xml, null, XPathResult.ANY_TYPE, null);
+        var result=nodes.iterateNext();
+
+        var price = 0.00;
+        while (result)
+        {
+            price += parseFloat(result.childNodes[0].nodeValue);
+            result=nodes.iterateNext();
+        }
+
+        list_info += '<li>Total Cost of all books: ' + price.toFixed(2) +'</li>'
     }
+};
 
-    var total_book_price = price.toFixed(2)
+var get_author_total_price_info = function(path) {
+    if (document.implementation && document.implementation.createDocument) {
+        var nodes = xml.evaluate(path, xml, null, XPathResult.ANY_TYPE, null);
+        var result = nodes.iterateNext();
 
-    var list_info = '<ul>' +
-        '<li>Total Cost of all books: '+total_book_price+'</li>' +
-        '</ul>';
+        //var book_list = [];
+        var price_list = [];
+        var author_list = [];
 
-    $('.book_list_info').append(list_info)
-}
+        var author_price_list = {}
+
+        var books_list = "<li>Total cost of authors books:<ul>";
+
+        while (result) {
+            var tag_name = result.tagName;
+            var node = result.childNodes[0].nodeValue;
+            if (tag_name == 'price') {
+                //console.log(node)
+                //console.log(node);
+                price_list.push(parseFloat(node))
+            } else if (tag_name == 'author_name') {
+                var first = result.childNodes[1].childNodes[0].nodeValue;
+                var last = result.childNodes[3].childNodes[0].nodeValue;
+                author_list.push(first + ' ' + last);
+            }
+
+            result = nodes.iterateNext();
+        }
+        $.each(author_list, function (index, author) {
+            if (author_price_list[author] != undefined) {
+                author_price_list[author] += price_list[index];
+            }else{
+                author_price_list[author] = price_list[index];
+            }
+            //books_list += '<li>' + book + ', ' + author_list[index] + ', ' + publisher_list[index] + '</li>'
+        });
+
+        $.each(author_price_list, function (author, cost) {
+            console.log(author)
+            books_list += '<li>' + author + ': ' + cost + '$</li>'
+        });
+
+        console.log(author_price_list, 'turtles')
+        books_list += '</ul></li>';
+        list_info += books_list;
+    }
+};
+
+var get_price_less_than_info = function(path) {
+    if (document.implementation && document.implementation.createDocument) {
+        var nodes = xml.evaluate(path, xml, null, XPathResult.ANY_TYPE, null);
+        var result = nodes.iterateNext();
+
+        var book_list = [];
+        var publisher_list = [];
+        var author_list = [];
+
+        var books_list = "<li>Books Less than 50$:<ul>";
+
+        while (result) {
+            var tag_name = result.tagName;
+            var node = result.childNodes[0].nodeValue;
+            if (tag_name == 'title') {
+                //console.log(node)
+                //console.log(node);
+                book_list.push(node)
+            } else if (tag_name == 'publisher') {
+                //console.log(node)
+                publisher_list.push(node)
+            } else if (tag_name == 'author_name') {
+                var first = result.childNodes[1].childNodes[0].nodeValue;
+                var last = result.childNodes[3].childNodes[0].nodeValue;
+                author_list.push(first + ' ' + last);
+            }
+
+            result = nodes.iterateNext();
+        }
+        $.each(book_list, function (index, book) {
+            books_list += '<li>' + book + ', ' + author_list[index] + ', ' + publisher_list[index] + '</li>'
+        });
+        books_list += '</ul></li>';
+        list_info += books_list;
+    }
+};
+
+var get_education_level_info = function(path) {
+    if (document.implementation && document.implementation.createDocument) {
+        var nodes = xml.evaluate(path, xml, null, XPathResult.ANY_TYPE, null);
+        var result = nodes.iterateNext();
+
+        var book_list = [];
+        var author_list = [];
+
+        var books_list = "<li>Authors with an MS or PHD:<ul>"
+
+
+        while (result) {
+            var tag_name = result.tagName;
+            var node = result.childNodes[0].nodeValue;
+            if (tag_name == 'title') {
+                book_list.push(node)
+            } else if (tag_name == 'author_name') {
+                var first = result.childNodes[1].childNodes[0].nodeValue;
+                var last = result.childNodes[3].childNodes[0].nodeValue;
+                author_list.push(first + ' ' + last);
+            }
+
+            result = nodes.iterateNext();
+        }
+        $.each(book_list, function (index, book) {
+            books_list += '<li>' + book + ', ' + author_list[index] + '</li>'
+        });
+
+        books_list += '</ul></li>';
+
+        list_info += books_list;
+    }
+};
+
+var get_published_after_info = function(path) {
+    if (document.implementation && document.implementation.createDocument) {
+        var nodes = xml.evaluate(path, xml, null, XPathResult.ANY_TYPE, null);
+        var result = nodes.iterateNext();
+
+        var book_list = [];
+        var publisher_list = [];
+        var author_list = [];
+
+        var books_list = "<li>Books Published after 2001: <ul>";
+
+        while (result) {
+            var tag_name = result.tagName;
+            var node = result.childNodes[0].nodeValue;
+            if (tag_name == 'title') {
+                //console.log(node)
+                //console.log(node);
+                book_list.push(node)
+            } else if (tag_name == 'publisher') {
+                //console.log(node)
+                publisher_list.push(node)
+            } else if (tag_name == 'author_name') {
+                var first = result.childNodes[1].childNodes[0].nodeValue;
+                var last = result.childNodes[3].childNodes[0].nodeValue;
+                author_list.push(first + ' ' + last);
+            }
+
+            result = nodes.iterateNext();
+        }
+        $.each(book_list, function (index, book) {
+            books_list += '<li>' + book + ', ' + author_list[index] + ', ' + publisher_list[index] + '</li>'
+        });
+        books_list += '</ul></li>';
+        list_info += books_list;
+    }
+};
+
+get_price_info(price_path);
+get_author_total_price_info(author_price_total_path);
+get_education_level_info(eduaction_path);
+get_price_less_than_info(price_less_path);
+get_published_after_info(publish_after_path);
+
+list_info += '</ul>';
+
+$('.book_list_info').append(list_info)

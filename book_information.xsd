@@ -88,7 +88,7 @@
                     <xsd:restriction base="xsd:string">
                         <xsd:enumeration value="BA" />
                         <xsd:enumeration value="BS" />
-                        <xsd:enumeration value="MA" />
+                        <xsd:enumeration value="MS" />
                         <xsd:enumeration value="PHD" />
                     </xsd:restriction>
                 </xsd:simpleType>

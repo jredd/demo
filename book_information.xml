@@ -56,7 +56,7 @@
     <price currency="dollars">7.86</price>
     <publication_date>2000-10-06</publication_date>
     <publisher_information>
-      <publisher>Scholastic Paperbacks Reprint Edition</publisher>
+      <publisher>Scholastic Paperbacks</publisher>
       <address>
         <street>2270 Springlake Road</street>
         <!--Optional:-->
@@ -77,7 +77,7 @@
         <last>Martin</last>
       </author_name>
       <date_of_birth>1952-01-01</date_of_birth>
-      <education_level>MA</education_level>
+      <education_level>MS</education_level>
       <Address>
         <street>401 Dont Know</street>
         <city>Dallas</city>
@@ -100,4 +100,37 @@
       <circulation_time>P3M5DT50M6S</circulation_time>
     </publisher_information>
   </book><!--END BOOK THREE-->
+
+  <book><!--BOOK Four-->
+    <title>Harry Potter And The Deathly Hollows</title>
+    <author>
+      <author_name>
+        <first>Joanne</first>
+        <last>Rowling</last>
+      </author_name>
+      <date_of_birth>1965-08-31</date_of_birth>
+      <education_level>BA</education_level>
+      <Address>
+        <street>19 Hazelbank Terrace</street>
+        <city>Edinburgh</city>
+        <zip>4354</zip>
+        <country>UK</country>
+      </Address>
+      <published_count>13</published_count>
+    </author>
+    <ISBN>B00-8FN-LM9W</ISBN>
+    <price currency="dollars">22.46</price>
+    <publication_date>2012-03-27</publication_date>
+    <publisher_information>
+      <publisher>Pottermore Limited</publisher>
+      <address>
+        <street>2270 Made Up Road</street>
+        <!--Optional:-->
+        <city>Somwhere Under</city>
+        <zip>75234</zip>
+        <country>UK</country>
+      </address>
+      <circulation_time>P3M5DT50M6S</circulation_time>
+    </publisher_information>
+  </book><!--END BOOK Four-->
 </book_list>

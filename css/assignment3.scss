@@ -60,6 +60,9 @@ html ul.tabs li.active, html ul.tabs li.active a:hover  {
   padding: 20px;
   font-size: 1.2em;
   color: $charcoal;
+  li {
+    list-style: none;
+  }
   h2{
     font-weight: normal;
     padding-bottom: 10px;
@@ -73,7 +76,7 @@ html ul.tabs li.active, html ul.tabs li.active a:hover  {
     font-size: 1.75em;
   }
   h5{
-    font-size: .75em;
+    font-size: 1em;
   }
     img {
       float: left;
@@ -81,4 +84,14 @@ html ul.tabs li.active, html ul.tabs li.active a:hover  {
       border: 1px solid #ddd;
       padding: 5px;
     }
+}
+
+
+.book_list_info {
+  li {
+    list-style: none;
+    li {
+      font-size: .75em;
+    }
+  }
 }
