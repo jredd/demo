@@ -138,7 +138,7 @@ var file_data = $.get('book_information.xml', function(data){
                 result=nodes.iterateNext();
             }
 
-            list_info += '<li>Total Cost of all books: ' + price.toFixed(2) +'</li>'
+            list_info += '<li><h5>Total Cost of all books:</h5><ul><li> ' + price.toFixed(2) +'$</li></ul></li>'
         }
     };
 
@@ -153,7 +153,7 @@ var file_data = $.get('book_information.xml', function(data){
 
             var author_price_list = {}
 
-            var books_list = "<li>Total cost of authors books:<ul>";
+            var books_list = "<li><h5>Total cost of authors books:</h5><ul>";
 
             while (result) {
                 var tag_name = result.tagName;
@@ -197,7 +197,7 @@ var file_data = $.get('book_information.xml', function(data){
             var publisher_list = [];
             var author_list = [];
 
-            var books_list = "<li>Books Less than 50$:<ul>";
+            var books_list = "<li><h5>Books Less than 50$:</h5><ul>";
 
             while (result) {
                 var tag_name = result.tagName;
@@ -233,7 +233,7 @@ var file_data = $.get('book_information.xml', function(data){
             var book_list = [];
             var author_list = [];
 
-            var books_list = "<li>Authors with an MS or PHD:<ul>"
+            var books_list = "<li><h5>Authors with an MS or PHD:</h5><ul>"
 
 
             while (result) {
@@ -268,7 +268,7 @@ var file_data = $.get('book_information.xml', function(data){
             var publisher_list = [];
             var author_list = [];
 
-            var books_list = "<li>Books Published after 2001: <ul>";
+            var books_list = "<li><h5>Books Published after 2001:</h5><ul>";
 
             while (result) {
                 var tag_name = result.tagName;
